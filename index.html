@@ -117,11 +117,12 @@ footer{padding:40px 5vw 90px;background:var(--tinta);color:#8d8275;font:600 12px
 .reveal.show{opacity:1;transform:none}
 .title-letters .letter{display:inline-block;opacity:0;transform:translateY(110%) rotate(-8deg);line-height:1;vertical-align:baseline}
 .title-letters .space{display:inline-block;width:.26em}
-.title-letters.is-visible .letter{animation:letterIn .8s var(--ease) both;animation-delay:calc(var(--i)*.045s)}
-.hero h1.title-letters.is-visible .letter{animation-name:heroType;animation-duration:.16s;animation-timing-function:steps(1,end);animation-delay:calc(var(--hero-i)*.08s)}
+.title-letters.is-visible .letter{animation:typewriterIn .12s steps(1,end) both;animation-delay:calc(var(--title-i)*.06s)}
+.hero h1.title-letters.is-visible .letter{animation-delay:calc(var(--title-i)*.2s)}
 /* ===== KEYFRAMES ===== */
 @keyframes letterIn{from{opacity:0;transform:translateY(110%) rotate(-8deg)}to{opacity:1;transform:none}}
 @keyframes heroType{from{opacity:0;transform:translateX(-.18em)}to{opacity:1;transform:none}}
+@keyframes typewriterIn{from{opacity:0;transform:translateX(-.18em)}to{opacity:1;transform:none}}
 @keyframes stepIn{from{opacity:.15;transform:translateY(28px) rotate(-1deg)}to{opacity:1;transform:none}}
 @keyframes processImageSwap{0%{opacity:.2;transform:scale(1.16) translateX(3%);filter:saturate(1.7) contrast(1.3)}100%{opacity:.68;transform:scale(1.05);filter:saturate(1.05) contrast(1.05)}}
 @keyframes tick{to{transform:translateX(-50%)}}
@@ -143,7 +144,7 @@ footer{padding:40px 5vw 90px;background:var(--tinta);color:#8d8275;font:600 12px
 }
 @media(prefers-reduced-motion:reduce){
 .ticker-track{animation:tick 18s linear infinite}.hero-img img,.brindis .bg img{animation:none}
-.title-letters .letter{opacity:1;transform:none}
+.title-letters .letter{opacity:1;transform:none;animation:none!important}
 .reveal{opacity:1;transform:none}
 }
 </style>
@@ -268,12 +269,11 @@ footer{padding:40px 5vw 90px;background:var(--tinta);color:#8d8275;font:600 12px
 
 <script>
 // ---- letters: palabras protegidas, nunca letra suelta rota
-let heroLetterIndex=0;
 document.querySelectorAll('.title-letters').forEach(el=>{
-  const isHero=el.matches('.hero h1');
+  let titleLetterIndex=0;
   el.querySelectorAll(':scope > .word-wrap').forEach(wr=>{
     const txt=wr.textContent;wr.textContent='';
-    [...txt].forEach((ch,i)=>{const s=document.createElement('span');s.className=ch===' '?'space letter':'letter';s.style.setProperty('--i',i);if(isHero)s.style.setProperty('--hero-i',heroLetterIndex++);s.textContent=ch===' '?'\u00A0':ch;wr.appendChild(s)});
+    [...txt].forEach((ch,i)=>{const s=document.createElement('span');s.className=ch===' '?'space letter':'letter';s.style.setProperty('--i',i);s.style.setProperty('--title-i',titleLetterIndex++);s.textContent=ch===' '?'\u00A0':ch;wr.appendChild(s)});
   });
   el.classList.add('anim');
 });
