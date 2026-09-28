@@ -175,10 +175,10 @@ footer{padding:40px 5vw 90px;background:var(--tinta);color:#8d8275;font:600 12px
 .menu-trigger{appearance:none;border:0;background:var(--tinta);color:var(--sun);width:44px;height:44px;border-radius:50%;display:grid;place-items:center;cursor:pointer;position:relative;z-index:61}
 .menu-trigger span,.menu-trigger span:before,.menu-trigger span:after{content:"";display:block;width:18px;height:2px;background:currentColor;transition:transform .35s var(--ease),opacity .25s}.menu-trigger span:before{position:absolute;transform:translateY(-6px)}.menu-trigger span:after{position:absolute;transform:translateY(6px)}.menu-trigger[aria-expanded=true] span{background:transparent}.menu-trigger[aria-expanded=true] span:before{transform:rotate(45deg)}.menu-trigger[aria-expanded=true] span:after{transform:rotate(-45deg)}
 .menu-scrim{position:fixed;inset:0;z-index:58;background:#2a211899;opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s}.menu-panel{position:fixed;z-index:60;inset:0 0 0 auto;width:var(--menu-width);padding:92px 28px 32px;background:var(--sun);transform:translateX(102%);transition:transform .55s var(--ease);box-shadow:-18px 0 50px #2a211833;overflow:auto}.menu-panel.is-open{transform:none}.menu-scrim.is-open{opacity:1;visibility:visible}.menu-panel h2{font:500 42px/.92 'Space Grotesk';margin:0 0 30px}.menu-panel nav{display:grid;gap:6px}.menu-panel a{display:flex;align-items:center;justify-content:space-between;padding:15px 0;border-bottom:1px solid #2a211833;color:var(--tinta);text-decoration:none;font:600 15px 'Space Grotesk'}.menu-panel a span{color:var(--tomate)}.menu-panel .menu-wa{margin-top:26px;padding:16px 18px;border:0;border-radius:999px;background:var(--tomate);color:var(--sun);justify-content:center}
-.hero-copy .hero-cta{position:relative;isolation:isolate;display:inline-flex;align-items:center;gap:12px;margin-top:4px;padding:14px 21px;border:2px solid var(--oro);border-radius:999px;background:linear-gradient(135deg,#2a2118 0%,#5d3a22 55%,var(--tomate) 100%);color:var(--sun);text-decoration:none;font:700 13px 'Space Grotesk';letter-spacing:.04em;box-shadow:0 7px 0 #9b5a19,0 12px 24px #2a21184d;overflow:hidden;transition:transform .3s var(--ease),box-shadow .3s var(--ease),filter .3s}.hero-copy .hero-cta:before{content:"";position:absolute;inset:0;z-index:-1;background:repeating-linear-gradient(125deg,#ffffff12 0 2px,transparent 2px 9px);opacity:.6}.hero-copy .hero-cta:hover{transform:translateY(-4px);filter:saturate(1.2);box-shadow:0 10px 0 #9b5a19,0 16px 28px #2a211866}
+.hero-copy .hero-cta,.proceso-panel .hero-cta{position:relative;isolation:isolate;display:inline-flex;align-items:center;gap:12px;margin-top:4px;padding:14px 21px;border:2px solid var(--oro);border-radius:999px;background:linear-gradient(135deg,#2a2118 0%,#5d3a22 55%,var(--tomate) 100%);color:var(--sun);text-decoration:none;font:700 13px 'Space Grotesk';letter-spacing:.04em;box-shadow:0 7px 0 #9b5a19,0 12px 24px #2a21184d;overflow:hidden;transition:transform .3s var(--ease),box-shadow .3s var(--ease),filter .3s}.hero-copy .hero-cta:before,.proceso-panel .hero-cta:before{content:"";position:absolute;inset:0;z-index:-1;background:repeating-linear-gradient(125deg,#ffffff12 0 2px,transparent 2px 9px);opacity:.6}.hero-copy .hero-cta:hover,.proceso-panel .hero-cta:hover{transform:translateY(-4px);filter:saturate(1.2);box-shadow:0 10px 0 #9b5a19,0 16px 28px #2a211866}
 .proceso-panel{transition:transform .7s var(--ease),opacity .7s}.proceso-panel.step-change{animation:chapterIn .75s var(--ease) both}@keyframes chapterIn{from{opacity:.2;transform:translateY(28px)}to{opacity:1;transform:none}}.chapter-dots{display:flex;gap:9px;margin-top:24px}.chapter-dots i{width:9px;height:9px;border-radius:50%;border:1px solid currentColor;opacity:.5;transition:.35s}.chapter-dots i.active{background:currentColor;opacity:1;transform:scale(1.35)}.sabor a{display:inline-flex;margin-top:14px;color:var(--sun);background:var(--tomate);border-radius:999px;padding:9px 13px;text-decoration:none;font:700 10px 'Space Grotesk';letter-spacing:.06em}
-@media(max-width:760px){.nav{padding:12px 18px}.wordmark{font-size:17px}.wordmark .dot{width:9px;height:9px}.menu-trigger{width:40px;height:40px}.menu-panel{padding:86px 24px 28px}.menu-panel h2{font-size:36px}.hero-copy .hero-cta{width:100%;justify-content:center;margin-top:8px}.chapter-dots{margin-top:20px}.sabor a{width:100%;justify-content:center}}
-@media(prefers-reduced-motion:reduce){.menu-panel,.menu-scrim,.menu-trigger span,.menu-trigger span:before,.menu-trigger span:after{transition:none}.proceso-panel.step-change{animation:none}.hero-copy .hero-cta{transition:none}}
+@media(max-width:760px){.nav{padding:12px 18px}.wordmark{font-size:17px}.wordmark .dot{width:9px;height:9px}.menu-trigger{width:40px;height:40px}.menu-panel{padding:86px 24px 28px}.menu-panel h2{font-size:36px}.hero-copy .hero-cta,.proceso-panel .hero-cta{width:100%;justify-content:center;margin-top:8px}.chapter-dots{margin-top:20px}.sabor a{width:100%;justify-content:center}}
+@media(prefers-reduced-motion:reduce){.menu-panel,.menu-scrim,.menu-trigger span,.menu-trigger span:before,.menu-trigger span:after{transition:none}.proceso-panel.step-change{animation:none}.hero-copy .hero-cta,.proceso-panel .hero-cta{transition:none}}
 </style>
 <a class="wordmark" href="#top">NORATO<b>charcutería</b><span class="dot"></span></a>
 <nav class="nav-links"><a href="#platos">Platos</a><a href="#proceso">Proceso</a><a href="#sabores">Sabores</a></nav>
@@ -194,7 +194,7 @@ footer{padding:40px 5vw 90px;background:var(--tinta);color:#8d8275;font:600 12px
 <div class="hero-copy reveal">
 <div class="kicker"><span class="sun-badge">☀</span> Charcutería Norato</div>
 <h1 class="title-letters"><span class="word-wrap">La mesa</span> <span class="word-wrap">empieza</span> <span class="word-wrap hl">aquí.</span></h1>
-<p>Nuestro salchichón artesanal sobre pan, en ensalada o en la tabla del mediodía. Hecho en lotes pequeños, para compartirse sin prisa.</p>
+<p>Nuestro salchichón artesanal se hace con pierna de cerdo y tocino, en una selección de primera calidad y con una intención clara: hacerlo de forma honesta, cuidada y artesanal.</p>
 <a class="hero-cta" href="#sabores">Descubrir los sabores <span>↓</span></a>
 </div>
 <div class="handnote">¡huele a casa! →</div>
@@ -230,7 +230,7 @@ footer{padding:40px 5vw 90px;background:var(--tinta);color:#8d8275;font:600 12px
 <div class="proceso-panel">
 <div class="stepno" id="proceso-count">Primero</div>
 <h3 id="proceso-title">La carne que elige la casa</h3>
-<p id="proceso-text">Empieza en lo que se sabe: piezas elegidas, sazón propia y fuego de leña. Lo que se afirma y lo que falta por confirmar se cuenta igual de claro.</p>
+<p id="proceso-text">La familia Norato parte de una receta familiar de los años 80: pierna de cerdo, tocino y una intención artesanal que busca hacer un embutido honesto.</p>
 <div class="chapter-dots" aria-label="Capítulos del proceso"><i class="active"></i><i></i><i></i></div><a class="hero-cta" href="#sabores">Conocer las variedades <span>↓</span></a>
 </div>
 </div>
@@ -264,8 +264,8 @@ footer{padding:40px 5vw 90px;background:var(--tinta);color:#8d8275;font:600 12px
 <footer><span>Charcutería Norato</span><span>Sol y Mesa</span><span>solo salchichón · chorizo en pausa</span></footer>
 
 <div class="ticker" style="bottom:auto;transform:rotate(1.2deg) scale(1.02)" aria-hidden="true"><div class="ticker-track">
-<span>hagamos mesa <em>✺</em></span><span>luz natural <em>✺</em></span><span>receta honesta <em>✺</em></span><span>23 piezas por lote <em>✺</em></span>
-<span>hagamos mesa <em>✺</em></span><span>luz natural <em>✺</em></span><span>receta honesta <em>✺</em></span><span>23 piezas por lote <em>✺</em></span>
+<span>hagamos mesa <em>✺</em></span><span>luz natural <em>✺</em></span><span>receta familiar de los 80 <em>✺</em></span><span>pierna de cerdo y tocino <em>✺</em></span>
+<span>hagamos mesa <em>✺</em></span><span>luz natural <em>✺</em></span><span>receta familiar de los 80 <em>✺</em></span><span>pierna de cerdo y tocino <em>✺</em></span>
 </div></div>
 
 <script>
@@ -286,8 +286,8 @@ document.querySelectorAll('.reveal').forEach(e=>rObs.observe(e));
 // ---- proceso sticky: cambia contenido al hacer scroll
 const pstage=document.querySelector('#proceso-stage'),ppanel=pstage.querySelector('.proceso-panel'),pcount=document.getElementById('proceso-count'),ptitle=document.getElementById('proceso-title'),ptext=document.getElementById('proceso-text'),pdots=[...document.querySelectorAll('.chapter-dots i')],pbg=document.querySelector('.proceso-sticky .bg img');
 const pasos=[
-['1','La carne que elige la casa','Empieza en lo que se sabe: piezas elegidas, sazón propia y fuego de leña. Lo que se afirma y lo que falta por confirmar se cuenta igual de claro.','assets/ahumadero.png'],
-['2','El fuego lento, sin atajos','El embutido espera su tiempo. Cada lote es pequeño para que nada pase de largo: 23 piezas por tanda, cada una revisada a mano.','assets/manos-corte.png'],
+['1','La carne que elige la casa','La familia Norato parte de una receta familiar de los años 80: pierna de cerdo, tocino y una intención artesanal que busca hacer un embutido honesto.','assets/ahumadero.png'],
+['2','El fuego lento, sin atajos','El embutido espera su tiempo. Cada lote se trabaja con cuidado, respetando la receta y la intención artesanal de la familia Norato.','assets/manos-corte.png'],
 ['3','Corte generoso, mesa lista','Así llega a la cocina de casa: rodaje gruesa, pan de por medio y alguien más que compartir. La prueba final siempre es la mesa.','assets/brindis.png']];
 function pasoFX(){const r=document.querySelector('.proceso-track').getBoundingClientRect();const p=Math.max(0,Math.min(.999,(-r.top)/(r.height-innerHeight)));const s=Math.min(2,Math.floor(p*3));const next=pasos[s];if(ptitle.textContent!==next[1]){ppanel.classList.remove('step-change');void pstage.offsetWidth;ppanel.classList.add('step-change');if(pbg){pbg.src=next[3];pbg.classList.remove('image-swap');void pbg.offsetWidth;pbg.classList.add('image-swap');}}const labels=['Primero','Segundo','Tercero'];pcount.textContent=labels[s];ptitle.textContent=next[1];ptext.textContent=next[2];pdots.forEach((d,i)=>d.classList.toggle('active',i===s));if(pbg){pbg.style.transform=`scale(1.08) translateY(${s*-.8}%)`;pbg.style.filter=s===1?'saturate(1.35) sepia(.3) contrast(1.15)':s===2?'saturate(1.4) contrast(1.2)':'saturate(1.05)';}pstage.style.background=s===0?'var(--sun2)':s===1?'#e9b45d':'#e2482b';ppanel.style.background=s===0?'#fff6e5ed':s===1?'#f5e0b8':'#ffd7c9';ppanel.dataset.step=labels[s];}
 addEventListener('scroll',pasoFX,{passive:true});pasoFX();
