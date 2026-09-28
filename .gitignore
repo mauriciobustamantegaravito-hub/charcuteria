@@ -1,0 +1,22 @@
+# Dependencies and build output
+node_modules/
+.next/
+out/
+dist/
+.vercel/
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Test and automation output
+.playwright-cli/
+output/
+*.log
+*.tar.gz
