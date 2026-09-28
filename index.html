@@ -80,7 +80,7 @@ section{position:relative}
 .proceso-sticky .bg:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#fff6e5ee 18%,transparent 75%)}
 .proceso-panel{position:relative;z-index:2;padding:0 6vw;max-width:640px}
 .proceso-panel.step-change{animation:stepIn .65s var(--ease) both}
-.proceso-panel .stepno{font:700 90px/1 'Space Grotesk';color:var(--sun);background:var(--tomate);border-radius:16px;box-shadow:10px 10px 0 var(--oro);width:max-content;padding:4px 18px;transform:rotate(-3deg)}
+.proceso-panel .stepno{font:700 clamp(34px,6vw,64px)/1 'Space Grotesk';color:var(--sun);background:var(--tomate);border-radius:16px;box-shadow:10px 10px 0 var(--oro);width:max-content;padding:8px 18px;transform:rotate(-3deg)}
 .proceso-panel h3{font:500 clamp(30px,4vw,54px)/1.05 'Space Grotesk';margin:20px 0 14px}
 .proceso-panel p{font:400 17px/1.7 Manrope;max-width:420px}
 .proceso-panel .sway{animation:none}
@@ -89,8 +89,8 @@ section{position:relative}
 .brindis .bg{position:absolute;inset:0}
 .brindis .bg img{width:100%;height:100%;object-fit:cover;animation:kenburns 16s ease-in-out infinite alternate-reverse}
 .brindis .bg:after{content:"";position:absolute;inset:0;background:radial-gradient(90% 70% at 50% 45%,transparent 30%,#fff6e5cc 92%)}
-.brindis-card{position:relative;z-index:2;text-align:center;padding:28px 4vw;max-width:900px;background:#fff6e5ed;border:9px solid var(--sun);box-shadow:16px 16px 0 var(--tomate);backdrop-filter:blur(4px)}
-.brindis-card h2{font:500 clamp(44px,7vw,110px)/0.95 'Space Grotesk';letter-spacing:-.03em;margin:0 0 20px}
+.brindis-card{position:relative;z-index:2;width:min(900px,calc(100% - 36px));text-align:center;padding:28px 4vw;max-width:900px;background:#fff6e5ed;border:9px solid var(--sun);box-shadow:16px 16px 0 var(--tomate);backdrop-filter:blur(4px)}
+.brindis-card h2{font:500 clamp(44px,7vw,110px)/.95 'Space Grotesk';letter-spacing:-.03em;margin:0 0 20px;max-width:100%;overflow-wrap:break-word}
 .brindis-card h2 .word-wrap{white-space:nowrap;display:inline}
 .brindis-card h2 .hl{color:var(--tomate)}
 .brindis-card p{font:700 26px Caveat;color:var(--oliva);margin:0 0 26px}
@@ -136,7 +136,7 @@ footer{padding:40px 5vw 90px;background:var(--tinta);color:#8d8275;font:600 12px
 @keyframes floaty{0%,100%{margin-top:0}50%{margin-top:-14px}}
 /* ===== MOBILE ===== */
 @media(max-width:760px){
-.nav-links{display:none}
+.nav-links{display:none}.title-letters .word-wrap{white-space:normal!important;overflow-wrap:break-word}
 .grid-platos{gap:14px}
 .plato.p-a,.plato.p-b,.plato.p-c,.plato.p-d,.plato.p-e,.plato.p-f{grid-column:span 12;aspect-ratio:4/3;margin-top:0}
 .sabor-grid{grid-template-columns:1fr}
@@ -163,7 +163,7 @@ footer{padding:40px 5vw 90px;background:var(--tinta);color:#8d8275;font:600 12px
   .reveal{opacity:1!important;transform:none!important;transition:none!important}
   .title-letters .letter{opacity:1!important;transform:none!important;animation:none!important}
   .platos{padding:76px 18px}.sec-head{margin-bottom:34px}.sec-head h2{font-size:clamp(42px,13vw,58px)}
-  .proceso-track{height:auto}.proceso-sticky{position:relative;height:auto;min-height:620px;padding:110px 18px 80px;display:flex;align-items:flex-end}.proceso-panel{padding:22px 20px;max-width:100%;width:100%;box-shadow:9px 11px 0 var(--oro)}.proceso-panel .stepno{font-size:66px}.proceso-panel h3{font-size:34px}
+  .proceso-track{height:auto}.proceso-sticky{position:relative;height:auto;min-height:620px;padding:110px 18px 80px;display:flex;align-items:flex-end}.proceso-panel{padding:22px 20px;max-width:100%;width:100%;box-shadow:9px 11px 0 var(--oro)}.proceso-panel .stepno{font-size:clamp(34px,12vw,56px)}.proceso-panel h3{font-size:34px}
   .brindis{min-height:680px}.brindis-card{margin:0 18px;padding:24px 18px;box-shadow:9px 11px 0 var(--tomate)}.brindis-card h2{font-size:clamp(42px,13vw,58px)}.brindis-card h2 .word-wrap{white-space:normal}
   .sabores{padding:76px 18px}.sabores h2{font-size:clamp(42px,13vw,58px)}
 }
@@ -227,7 +227,7 @@ footer{padding:40px 5vw 90px;background:var(--tinta);color:#8d8275;font:600 12px
 <div class="proceso-sticky" id="proceso-stage">
 <div class="bg"><img src="assets/ahumadero.png" alt="Salchichones ahumando"></div>
 <div class="proceso-panel">
-<div class="stepno">0<span id="proceso-count">1</span></div>
+<div class="stepno" id="proceso-count">Primero</div>
 <h3 id="proceso-title">La carne que elige la casa</h3>
 <p id="proceso-text">Empieza en lo que se sabe: piezas elegidas, sazón propia y fuego de leña. Lo que se afirma y lo que falta por confirmar se cuenta igual de claro.</p>
 <div class="chapter-dots" aria-label="Capítulos del proceso"><i class="active"></i><i></i><i></i></div><a class="hero-cta" href="#sabores">Conocer las variedades <span>↓</span></a>
@@ -288,7 +288,7 @@ const pasos=[
 ['1','La carne que elige la casa','Empieza en lo que se sabe: piezas elegidas, sazón propia y fuego de leña. Lo que se afirma y lo que falta por confirmar se cuenta igual de claro.','assets/ahumadero.png'],
 ['2','El fuego lento, sin atajos','El embutido espera su tiempo. Cada lote es pequeño para que nada pase de largo: 23 piezas por tanda, cada una revisada a mano.','assets/manos-corte.png'],
 ['3','Corte generoso, mesa lista','Así llega a la cocina de casa: rodaje gruesa, pan de por medio y alguien más que compartir. La prueba final siempre es la mesa.','assets/brindis.png']];
-function pasoFX(){const r=document.querySelector('.proceso-track').getBoundingClientRect();const p=Math.max(0,Math.min(.999,(-r.top)/(r.height-innerHeight)));const s=Math.min(2,Math.floor(p*3));const next=pasos[s];if(ptitle.textContent!==next[1]){pstage.querySelector('.proceso-panel').classList.remove('step-change');void pstage.offsetWidth;pstage.querySelector('.proceso-panel').classList.add('step-change');if(pbg){pbg.src=next[3];pbg.classList.remove('image-swap');void pbg.offsetWidth;pbg.classList.add('image-swap');}}pcount.textContent=s+1;ptitle.textContent=next[1];ptext.textContent=next[2];pdots.forEach((d,i)=>d.classList.toggle('active',i===s));if(pbg){pbg.style.transform=`scale(1.08) translateY(${s*-.8}%)`;pbg.style.filter=s===1?'saturate(1.35) sepia(.3) contrast(1.15)':s===2?'saturate(1.4) contrast(1.2)':'saturate(1.05)';}pstage.style.background=s===0?'var(--sun2)':s===1?'#e9b45d':'#e2482b';}
+function pasoFX(){const r=document.querySelector('.proceso-track').getBoundingClientRect();const p=Math.max(0,Math.min(.999,(-r.top)/(r.height-innerHeight)));const s=Math.min(2,Math.floor(p*3));const next=pasos[s];if(ptitle.textContent!==next[1]){pstage.querySelector('.proceso-panel').classList.remove('step-change');void pstage.offsetWidth;pstage.querySelector('.proceso-panel').classList.add('step-change');if(pbg){pbg.src=next[3];pbg.classList.remove('image-swap');void pbg.offsetWidth;pbg.classList.add('image-swap');}}const labels=['Primero','Segundo','Tercero'];pcount.textContent=labels[s];ptitle.textContent=next[1];ptext.textContent=next[2];pdots.forEach((d,i)=>d.classList.toggle('active',i===s));if(pbg){pbg.style.transform=`scale(1.08) translateY(${s*-.8}%)`;pbg.style.filter=s===1?'saturate(1.35) sepia(.3) contrast(1.15)':s===2?'saturate(1.4) contrast(1.2)':'saturate(1.05)';}pstage.style.background=s===0?'var(--sun2)':s===1?'#e9b45d':'#e2482b';}
 addEventListener('scroll',pasoFX,{passive:true});pasoFX();
 // ---- parallax suave en platos
 const plats=[...document.querySelectorAll('.plato img')];
