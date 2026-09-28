@@ -136,13 +136,13 @@ footer{padding:40px 5vw 90px;background:var(--tinta);color:#8d8275;font:600 12px
 @keyframes floaty{0%,100%{margin-top:0}50%{margin-top:-14px}}
 /* ===== MOBILE ===== */
 @media(max-width:760px){
-.nav-links{display:none}.title-letters .word-wrap{white-space:normal!important;overflow-wrap:break-word}
+.nav-links{display:none}.title-letters .word-wrap{white-space:nowrap!important;overflow-wrap:normal;word-break:normal}
 .grid-platos{gap:14px}
 .plato.p-a,.plato.p-b,.plato.p-c,.plato.p-d,.plato.p-e,.plato.p-f{grid-column:span 12;aspect-ratio:4/3;margin-top:0}
 .sabor-grid{grid-template-columns:1fr}
 .hero .handnote{display:none}
 }
-@media(max-width:900px){.nav-links{display:none}.hero h1 .word-wrap{white-space:normal;display:inline}.proceso-panel{min-width:0}.proceso-panel h3{font-size:clamp(28px,8.8vw,34px);line-height:1.08;overflow-wrap:anywhere}.proceso-panel p{font-size:16px;line-height:1.5;overflow-wrap:anywhere}.proceso-panel .hero-cta,.hero-cta{max-width:100%;white-space:normal;text-align:center}.hero .handnote{max-width:38vw;overflow-wrap:anywhere}}
+@media(max-width:900px){.nav-links{display:none}.hero h1 .word-wrap{white-space:nowrap;display:inline;overflow-wrap:normal;word-break:normal}.proceso-panel{min-width:0}.proceso-panel h3{font-size:clamp(28px,8.8vw,34px);line-height:1.08;overflow-wrap:anywhere}.proceso-panel p{font-size:16px;line-height:1.5;overflow-wrap:anywhere}.proceso-panel .hero-cta,.hero-cta{max-width:100%;white-space:normal;text-align:center}.hero .handnote{max-width:38vw;overflow-wrap:anywhere}}
 @media(prefers-reduced-motion:reduce){
 .ticker-track{animation:tick 18s linear infinite}.hero-img img,.brindis .bg img{animation:none}
 .title-letters .letter{opacity:1;transform:none;animation:none!important}
@@ -156,7 +156,7 @@ footer{padding:40px 5vw 90px;background:var(--tinta);color:#8d8275;font:600 12px
 </style>
 </head>
 <style>
-.hero-copy{padding:clamp(20px,3vw,38px);background:rgba(255,247,231,.91);border:2px solid rgba(226,72,43,.82);box-shadow:14px 16px 0 rgba(242,167,27,.92);border-radius:4px}.hero h1,.hero h1 .word-wrap,.hero h1 .word-wrap:nth-child(2){font-family:'Space Grotesk',Arial,sans-serif!important;font-style:normal!important;font-weight:700!important;letter-spacing:-.055em}.hero h1{color:var(--ink);text-shadow:none}.hero h1 .hl{color:var(--tomate)}.hero-copy p{color:#312820;text-shadow:none}@media(max-width:760px){.hero-copy{width:calc(100% - 36px);margin:0 18px;padding:22px 20px;box-shadow:9px 11px 0 rgba(242,167,27,.92)}.hero h1{font-size:clamp(48px,14vw,66px);line-height:.94}.hero h1 .word-wrap{white-space:normal}}
+.hero-copy{padding:clamp(20px,3vw,38px);background:rgba(255,247,231,.91);border:2px solid rgba(226,72,43,.82);box-shadow:14px 16px 0 rgba(242,167,27,.92);border-radius:4px}.hero h1,.hero h1 .word-wrap,.hero h1 .word-wrap:nth-child(2){font-family:'Space Grotesk',Arial,sans-serif!important;font-style:normal!important;font-weight:700!important;letter-spacing:-.055em}.hero h1{color:var(--ink);text-shadow:none}.hero h1 .hl{color:var(--tomate)}.hero-copy p{color:#312820;text-shadow:none}@media(max-width:760px){.hero-copy{width:calc(100% - 36px);margin:0 18px;padding:22px 20px;box-shadow:9px 11px 0 rgba(242,167,27,.92)}.hero h1{font-size:clamp(48px,14vw,66px);line-height:.94}.hero h1 .word-wrap{white-space:nowrap;overflow-wrap:normal;word-break:normal}}
 </style>
 <body>
 <style>
@@ -165,7 +165,7 @@ footer{padding:40px 5vw 90px;background:var(--tinta);color:#8d8275;font:600 12px
   .title-letters .letter{opacity:1!important;transform:none!important;animation:none!important}
   .platos{padding:76px 18px}.sec-head{margin-bottom:34px}.sec-head h2{font-size:clamp(42px,13vw,58px)}
   .proceso-track{height:auto}.proceso-sticky{position:relative;height:auto;min-height:620px;padding:110px 18px 80px;display:flex;align-items:flex-end}.proceso-panel{padding:22px 20px;max-width:100%;width:100%;box-shadow:9px 11px 0 var(--oro)}.proceso-panel .stepno{font-size:clamp(34px,12vw,56px)}.proceso-panel h3{font-size:34px}
-  .brindis{min-height:680px}.brindis-card{margin:0 18px;padding:24px 18px;box-shadow:9px 11px 0 var(--tomate)}.brindis-card h2{font-size:clamp(42px,13vw,58px)}.brindis-card h2 .word-wrap{white-space:normal}
+  .brindis{min-height:680px}.brindis-card{margin:0 18px;padding:24px 18px;box-shadow:9px 11px 0 var(--tomate)}.brindis-card h2{font-size:clamp(42px,13vw,58px)}.brindis-card h2 .word-wrap{white-space:nowrap;overflow-wrap:normal;word-break:normal}
   .sabores{padding:76px 18px}.sabores h2{font-size:clamp(42px,13vw,58px)}
 }
 </style>
