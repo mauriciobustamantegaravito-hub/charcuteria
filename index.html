@@ -73,20 +73,27 @@ section{position:relative}
 .plato .cap span{font:600 11px 'Space Grotesk';letter-spacing:.12em;text-transform:uppercase;color:var(--oro)}
 .plato.p-a,.plato.p-b,.plato.p-c,.plato.p-d,.plato.p-e,.plato.p-f{grid-column:span 4;aspect-ratio:1/1;margin-top:0}
 .float-badge{position:absolute;top:16px;left:16px;background:rgba(42,33,24,0.9);color:var(--oro);font:700 19px Caveat;padding:10px 19px;border:2px solid var(--oro);border-radius:999px;box-shadow:0 8px 20px #2a211855;transform:rotate(-4deg);animation:sway 4s ease-in-out infinite;z-index:2}
-/* ===== PROCESO (sticky scroll) ===== */
-.proceso{background:transparent;min-height:0;padding:0}
-.proceso-track{height:400vh;position:relative}
-.proceso-sticky{position:sticky;top:0;height:100svh;overflow:hidden;display:grid;align-items:center;background:transparent!important;transition:background 1s var(--ease)}
-.proceso-sticky .bg{position:absolute;inset:0}
-.proceso-sticky .bg img{width:100%;height:100%;object-fit:cover;object-position:top;opacity:.68;transform:scale(1.05);transition:opacity .18s,filter .18s}
-.proceso-sticky .bg img.image-swap{animation:processImageSwap .42s steps(2,end) both}
-.proceso-sticky .bg:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,9,4,0.92) 18%,transparent 75%)}
-.proceso-panel{position:relative;z-index:2;padding:0 6vw;max-width:640px}
-.proceso-panel.step-change{animation:stepIn .65s var(--ease) both}
-.proceso-panel .stepno{font:700 clamp(34px,6vw,64px)/1 'Space Grotesk';color:var(--sun);background:var(--tomate);border-radius:16px;box-shadow:10px 10px 0 var(--oro);width:max-content;padding:8px 18px;transform:rotate(-3deg)}
-.proceso-panel h3{font:500 clamp(30px,4vw,54px)/1.05 'Space Grotesk';margin:20px 0 14px}
-.proceso-panel p{font:400 17px/1.7 Manrope;max-width:420px}
-.proceso-panel .sway{animation:none}
+/* ===== PROCESO (Editorial & Galería de Oficio) ===== */
+.proceso{background:transparent;padding:12vh 5vw;position:relative}
+.proceso-header{max-width:820px;margin-bottom:52px}
+.proceso-header h2{font:500 clamp(38px,6vw,84px)/0.95 'Space Grotesk';letter-spacing:-.03em;margin:12px 0 18px}
+.proceso-header p{font:400 18px/1.65 Manrope;color:#e8d5be;max-width:620px}
+.proceso-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-bottom:48px}
+.proceso-card{background:rgba(18,9,4,0.8);backdrop-filter:blur(10px);border:1px solid rgba(242,167,27,0.35);border-radius:20px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.5);display:flex;flex-direction:column;transition:transform .4s var(--ease),border-color .4s,box-shadow .4s}
+.proceso-card:hover{transform:translateY(-6px);border-color:var(--oro);box-shadow:0 14px 40px rgba(255,120,30,0.25)}
+.proceso-card-img{position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;background:#0d0603}
+.proceso-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.proceso-card:hover .proceso-card-img img{transform:scale(1.05)}
+.proceso-badge{position:absolute;top:14px;left:14px;padding:6px 14px;background:rgba(18,9,4,0.85);backdrop-filter:blur(8px);color:var(--oro);border:1px solid rgba(242,167,27,0.5);border-radius:999px;font:700 11px 'Space Grotesk';letter-spacing:.12em;text-transform:uppercase}
+.proceso-step-num{position:absolute;top:14px;right:14px;width:34px;height:34px;border-radius:50%;background:var(--tomate);color:var(--sun);font:700 13px 'Space Grotesk';display:grid;place-items:center;box-shadow:0 4px 12px rgba(0,0,0,0.4)}
+.proceso-card-body{padding:26px 22px;display:flex;flex-direction:column;flex:1}
+.proceso-card-body h3{font:600 22px/1.2 'Space Grotesk';margin:0 0 10px;color:var(--sun)}
+.proceso-card-body p{font:400 15px/1.65 Manrope;color:#d8cfc3;margin:0}
+.proceso-video-box{margin-top:28px;background:rgba(18,9,4,0.85);backdrop-filter:blur(14px);border:1px solid rgba(242,167,27,0.4);border-radius:22px;padding:36px;box-shadow:0 12px 48px rgba(0,0,0,0.6);display:grid;grid-template-columns:1.2fr 1fr;gap:36px;align-items:center}
+.proceso-video-wrapper{position:relative;width:100%;max-width:380px;border-radius:16px;overflow:hidden;box-shadow:0 10px 35px rgba(0,0,0,0.8);background:#000;aspect-ratio:9/16;margin:0 auto;border:1px solid rgba(242,167,27,0.3)}
+.proceso-video-wrapper video{width:100%;height:100%;object-fit:cover;display:block}
+.proceso-video-info h3{font:600 clamp(28px,3.8vw,42px)/1.1 'Space Grotesk';margin:14px 0 16px;color:var(--sun)}
+.proceso-video-info p{font:400 16px/1.7 Manrope;color:#e8d5be;margin:0 0 24px}
 /* ===== BRINDIS ===== */
 .brindis{position:relative;min-height:100svh;overflow:hidden;display:grid;place-items:center;background:transparent}
 .brindis .bg{position:absolute;inset:0}
@@ -172,7 +179,7 @@ footer{padding:40px 5vw 90px;background:rgba(18,9,4,0.85);backdrop-filter:blur(8
   .reveal{opacity:1!important;transform:none!important;transition:none!important}
   /* mobile animation enabled */
   .platos{padding:76px 18px}.sec-head{margin-bottom:34px}.sec-head h2{font-size:clamp(42px,13vw,58px)}
-  .proceso-track{height:400vh}.proceso-sticky{position:sticky;height:100svh;min-height:0;padding:110px 18px 80px;display:flex;align-items:flex-end}.proceso-panel{padding:22px 20px;max-width:100%;width:100%;box-shadow:0 4px 30px rgba(255,120,30,0.2)}.proceso-panel .stepno{font-size:clamp(34px,12vw,56px)}.proceso-panel h3{font-size:34px}
+  .proceso{padding:76px 18px}.proceso-grid{grid-template-columns:1fr;gap:18px}.proceso-video-box{grid-template-columns:1fr;padding:24px 18px;gap:22px}.proceso-video-wrapper{max-width:100%;aspect-ratio:9/16;max-height:480px}
   .brindis{min-height:680px}.brindis-card{margin:0 18px;padding:24px 18px;box-shadow:0 0 60px rgba(255,100,20,0.15)}.brindis-card h2{font-size:clamp(42px,13vw,58px)}.brindis-card h2 .word-wrap{white-space:nowrap;overflow-wrap:normal;word-break:normal}
   .sabores{padding:76px 18px}.sabores h2{font-size:clamp(42px,13vw,58px)}
 }
@@ -233,17 +240,94 @@ footer{padding:40px 5vw 90px;background:rgba(18,9,4,0.85);backdrop-filter:blur(8
 
 <!-- PROCESO -->
 <section id="proceso" class="proceso">
-<div class="proceso-track">
-<div class="proceso-sticky" id="proceso-stage">
+  <div class="proceso-header reveal">
+    <div class="kicker"><span class="sun-badge">🔥</span> El Oficio y el Fuego</div>
+    <h2 class="title-letters"><span class="word-wrap">Del taller</span> <span class="word-wrap hl">a la mesa.</span></h2>
+    <p>Sin atajos industriales ni prisas. Carne de cerdo seleccionada, tripa natural atada a mano, leña de roble en el ahumadero y reposo paciente con receta familiar de los 80.</p>
+  </div>
 
-<div class="proceso-panel">
-<div class="stepno" id="proceso-count">Primero</div>
-<h3 id="proceso-title">La carne que elige la casa</h3>
-<p id="proceso-text">La familia Norato parte de una receta familiar de los años 80: pierna de cerdo, tocino y una intención artesanal que busca hacer un embutido honesto.</p>
-<div class="chapter-dots" aria-label="Capítulos del proceso"><i class="active"></i><i></i><i></i></div><a class="hero-cta" href="#sabores">Conocer las variedades <span>↓</span></a>
-</div>
-</div>
-</div>
+  <div class="proceso-grid">
+    <!-- Paso 1 -->
+    <article class="proceso-card reveal">
+      <div class="proceso-card-img">
+        <img src="assets/proceso-1-seleccion.jpg" alt="Selección de carne magra y tocino fresco para salchichón Norato">
+        <span class="proceso-badge">Ingredientes</span>
+        <span class="proceso-step-num">01</span>
+      </div>
+      <div class="proceso-card-body">
+        <h3>Carne magra y tocino de primera</h3>
+        <p>Pierna de cerdo fresca picada a cuchillo con dados de tocino firme, pimienta negra entera, sal marina y especias naturales seleccionadas.</p>
+      </div>
+    </article>
+
+    <!-- Paso 2 -->
+    <article class="proceso-card reveal">
+      <div class="proceso-card-img">
+        <img src="assets/proceso-2-atado.jpg" alt="Atado artesanal de salchichón en tripa natural con hilo">
+        <span class="proceso-badge">Tripa natural</span>
+        <span class="proceso-step-num">02</span>
+      </div>
+      <div class="proceso-card-body">
+        <h3>Embutido y atado pieza a pieza</h3>
+        <p>Embutido tradicional en tripa natural y atado a mano con hilo de algodón. Cada salchichón recibe el calibre, la tensión y el cuidado de un oficio vivo.</p>
+      </div>
+    </article>
+
+    <!-- Paso 3 -->
+    <article class="proceso-card reveal">
+      <div class="proceso-card-img">
+        <img src="assets/proceso-3-ahumadero.jpg" alt="Ahumadero tradicional con leña de roble y brasas">
+        <span class="proceso-badge">Leña de roble</span>
+        <span class="proceso-step-num">03</span>
+      </div>
+      <div class="proceso-card-body">
+        <h3>Ahumado lento en brasas</h3>
+        <p>Horas continuas de humo aromático de roble acariciando las varas, forjando el tono dorado rojizo y el inconfundible aroma tostado de Norato.</p>
+      </div>
+    </article>
+
+    <!-- Paso 4 -->
+    <article class="proceso-card reveal">
+      <div class="proceso-card-img">
+        <img src="assets/photo_1_2026-11-07_20-51-27.jpg" alt="Salchichón artesanal Norato reposando en varas del taller">
+        <span class="proceso-badge">Taller Norato</span>
+        <span class="proceso-step-num">04</span>
+      </div>
+      <div class="proceso-card-body">
+        <h3>Oteo y maduración en reposo</h3>
+        <p>Lotes colgados en reposo en nuestro taller para fijar textura, humedad y aromas. Una curación donde el tiempo hace lo que ningún aditivo puede igualar.</p>
+      </div>
+    </article>
+
+    <!-- Paso 5 -->
+    <article class="proceso-card reveal">
+      <div class="proceso-card-img">
+        <img src="assets/photo_5_2026-11-07_20-51-27.jpg" alt="Lote Jamonado Norato empacado al vacío de 450g listo para entrega">
+        <span class="proceso-badge">Lote 450g</span>
+        <span class="proceso-step-num">05</span>
+      </div>
+      <div class="proceso-card-body">
+        <h3>Frescura sellada al vacío</h3>
+        <p>Empaque al vacío que resguarda la jugosidad, el brillo y toda la profundidad de sabor hasta el instante en que lo cortas en tu cocina.</p>
+      </div>
+    </article>
+  </div>
+
+  <!-- Video Showcase -->
+  <div class="proceso-video-box reveal">
+    <div class="proceso-video-info">
+      <div class="kicker"><span class="sun-badge">🎥</span> Desde el taller</div>
+      <h3>El producto real, en movimiento.</h3>
+      <p>Mira de cerca la consistencia, el brillo y la firmeza de nuestros salchichones artesanales recién salidos de la línea de elaboración en el taller familiar.</p>
+      <a class="hero-cta" href="#sabores">Ver los 3 sabores <span>↓</span></a>
+    </div>
+    <div class="proceso-video-wrapper">
+      <video controls playsinline preload="metadata" poster="assets/photo_1_2026-11-07_20-51-27.jpg">
+        <source src="assets/video_2026-11-07_20-51-27.mp4" type="video/mp4">
+        Tu navegador no soporta el reproductor de video.
+      </video>
+    </div>
+  </div>
 </section>
 
 <!-- BRINDIS -->
@@ -292,14 +376,6 @@ document.querySelectorAll('.title-letters').forEach(el=>{el.getBoundingClientRec
 // ---- reveals
 const rObs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');rObs.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(e=>rObs.observe(e));
-// ---- proceso sticky: cambia contenido al hacer scroll
-const pstage=document.querySelector('#proceso-stage'),ppanel=pstage.querySelector('.proceso-panel'),pcount=document.getElementById('proceso-count'),ptitle=document.getElementById('proceso-title'),ptext=document.getElementById('proceso-text'),pdots=[...document.querySelectorAll('.chapter-dots i')],pbg=document.querySelector('.proceso-sticky .bg img');
-const pasos=[
-['1','La carne que elige la casa','La familia Norato parte de una receta familiar de los años 80: pierna de cerdo, tocino y una intención artesanal que busca hacer un embutido honesto.','assets/ahumadero.png'],
-['2','El fuego lento, sin atajos','El embutido espera su tiempo. Cada lote se trabaja con cuidado, respetando la receta y la intención artesanal de la familia Norato.','assets/manos-corte.png'],
-['3','Corte generoso, mesa lista','Así llega a la cocina de casa: rodaje gruesa, pan de por medio y alguien más que compartir. La prueba final siempre es la mesa.','assets/brindis.png']];
-function pasoFX(){const r=document.querySelector('.proceso-track').getBoundingClientRect();const p=Math.max(0,Math.min(.999,(-r.top)/(r.height-innerHeight)));const s=Math.min(2,Math.floor(p*3));const next=pasos[s];if(ptitle.textContent!==next[1]){ppanel.classList.remove('step-change');void pstage.offsetWidth;ppanel.classList.add('step-change');if(pbg){pbg.src=next[3];pbg.classList.remove('image-swap');void pbg.offsetWidth;pbg.classList.add('image-swap');}}const labels=['Primero','Segundo','Tercero'];pcount.textContent=labels[s];ptitle.textContent=next[1];ptext.textContent=next[2];pdots.forEach((d,i)=>d.classList.toggle('active',i===s));if(pbg){pbg.style.transform=`scale(1.08) translateY(${s*-.8}%)`;pbg.style.filter=s===1?'saturate(1.35) sepia(.3) contrast(1.15)':s===2?'saturate(1.4) contrast(1.2)':'saturate(1.05)';}pstage.style.background='transparent';ppanel.style.background='rgba(18,9,4,0.88)';ppanel.dataset.step=labels[s];}
-addEventListener('scroll',pasoFX,{passive:true});pasoFX();
 // ---- parallax suave en platos
 const plats=[...document.querySelectorAll('.plato img')];
 addEventListener('scroll',()=>{const y=scrollY;plats.forEach((im,i)=>{const p=(im.getBoundingClientRect().top)/innerHeight;im.style.transform=`scale(1.06) translateY(${p*22*(i%2?1:-1)}px)`})},{passive:true});
