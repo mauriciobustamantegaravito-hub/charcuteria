@@ -163,11 +163,10 @@ section{position:relative}
 .brindis-highlights{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:30px}
 .brindis-pill{display:inline-flex;align-items:center;gap:8px;padding:9px 18px;border-radius:999px;background:rgba(255,246,229,0.08);border:1px solid rgba(242,167,27,0.3);color:var(--sun);font:600 13px 'Space Grotesk'}
 /* ===== SABORES (Tarjetas con Protagonistas) ===== */
-.sabores{background:transparent;color:var(--sun);padding:14vh 5vw}
+.sabores{background:transparent;color:var(--sun);padding:10vh 5vw 8vh;position:relative}
 .sabores h2{font:700 clamp(36px,5.5vw,76px)/0.95 'Space Grotesk';letter-spacing:-.02em;margin:0 0 40px}
 .sabor-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.sabor{background:rgba(18,9,4,0.85);backdrop-filter:blur(14px);border:1px solid rgba(242,167,27,0.35);box-shadow:0 12px 36px rgba(0,0,0,0.6);border-radius:24px;padding:26px 22px 28px;display:flex;flex-direction:column;justify-content:space-between;transition:transform .4s var(--ease),border-color .4s,box-shadow .4s;position:relative;overflow:hidden;text-align:center}
-.sabor:hover{transform:translateY(-8px);border-color:var(--oro);box-shadow:0 18px 48px rgba(255,120,30,0.25)}
+.sabor{background:rgba(18,9,4,0.85);backdrop-filter:blur(14px);border:1px solid rgba(242,167,27,0.35);box-shadow:0 12px 36px rgba(0,0,0,0.6);border-radius:24px;padding:26px 22px 28px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;text-align:center}
 .sabor-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
 .sabor .num{font:700 15px 'Space Grotesk';color:var(--oro);letter-spacing:.2em}
 .sabor-badge{font:700 11px 'Space Grotesk';letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border-radius:999px}
@@ -180,6 +179,66 @@ section{position:relative}
 .chip{font:600 11px Manrope;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border-radius:999px;background:var(--tomate);color:var(--sun)}
 .sabor-cta{display:inline-flex;align-items:center;justify-content:center;width:100%;padding:12px 18px;border-radius:999px;background:var(--tomate);color:var(--sun);text-decoration:none;font:700 12px 'Space Grotesk';letter-spacing:.06em;text-transform:uppercase;transition:all .25s ease;box-shadow:0 6px 18px rgba(0,0,0,0.4)}
 .sabor-cta:hover{filter:brightness(1.15);transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,0.6)}
+
+/* ===== MOTION SCROLL CARDS (SISTEMA PREMIUM DE ENTRADAS VARIADAS) ===== */
+.motion-card{
+  opacity: 0;
+  will-change: transform, opacity;
+  transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s var(--ease),
+              border-color 0.4s var(--ease);
+}
+/* Efectos de entrada diferentes para cada tarjeta */
+.motion-from-left{
+  transform: translateX(-70px) rotate(-2.5deg) scale(0.95);
+}
+.motion-from-right{
+  transform: translateX(70px) rotate(2.5deg) scale(0.95);
+}
+.motion-from-bottom{
+  transform: translateY(80px) scale(0.92);
+}
+.motion-slide-left{
+  transform: translateX(-65px) rotate(-1.5deg) scale(0.96);
+}
+.motion-slide-right{
+  transform: translateX(65px) rotate(1.5deg) scale(0.96);
+}
+.motion-zoom-up{
+  transform: translateY(65px) scale(0.90);
+}
+.motion-from-bl{
+  transform: translate(-50px, 55px) rotate(-2deg) scale(0.94);
+}
+.motion-from-br{
+  transform: translate(50px, 55px) rotate(2deg) scale(0.94);
+}
+/* Estado activo cuando la tarjeta entra al viewport */
+.motion-card.is-visible{
+  opacity: 1!important;
+  transform: translate3d(0, 0, 0) rotate(0deg) scale(1)!important;
+}
+/* Hover suave para tarjetas visibles */
+.sabor.motion-card.is-visible:hover{
+  transform: translateY(-8px) scale(1.01)!important;
+  border-color: var(--oro)!important;
+  box-shadow: 0 18px 48px rgba(255,120,30,0.25)!important;
+}
+.plato.motion-card.is-visible:hover{
+  transform: translateY(-6px) scale(1.01)!important;
+  border-color: var(--oro)!important;
+  box-shadow: 0 20px 60px rgba(255,120,30,0.35)!important;
+}
+.proceso-card.motion-card.is-visible:hover{
+  transform: translateY(-6px)!important;
+  border-color: var(--oro)!important;
+  box-shadow: 0 14px 40px rgba(255,120,30,0.25)!important;
+}
+.proceso-video-box.motion-card.is-visible:hover{
+  border-color: var(--oro)!important;
+  box-shadow: 0 16px 54px rgba(255,120,30,0.3)!important;
+}
 /* ===== FOOTER (Alto Contraste vs Llamas) ===== */
 .site-footer{position:relative;z-index:35;background:#090402;border-top:2px solid rgba(242,167,27,0.4);box-shadow:0 -20px 40px #090402;padding:36px 5vw 90px;color:var(--sun)}
 .footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;font:600 12px 'Space Grotesk';letter-spacing:.12em;text-transform:uppercase}
@@ -249,12 +308,22 @@ section{position:relative}
   .sabor a{width:100%;justify-content:center}
   .site-footer{padding:30px 18px 80px}
   .footer-inner{flex-direction:column;text-align:center;gap:14px}
+  /* Motion suave y seguro en móvil (sin scroll horizontal) */
+  .motion-from-left{ transform: translateX(-36px) rotate(-1.5deg) scale(0.96); }
+  .motion-from-right{ transform: translateX(36px) rotate(1.5deg) scale(0.96); }
+  .motion-slide-left{ transform: translateX(-32px) scale(0.96); }
+  .motion-slide-right{ transform: translateX(32px) scale(0.96); }
+  .motion-from-bl{ transform: translate(-28px, 45px) scale(0.95); }
+  .motion-from-br{ transform: translate(28px, 45px) scale(0.95); }
+  .motion-from-bottom{ transform: translateY(50px) scale(0.94); }
+  .motion-zoom-up{ transform: translateY(45px) scale(0.92); }
 }
 @media(prefers-reduced-motion:reduce){
   .ticker-track{animation:tick 18s linear infinite}.hero-img img,.brindis .bg img{animation:none}
   .title-letters .letter{opacity:1;transform:none;animation:none!important}
   .reveal{opacity:1;transform:none}
   .tw-char{opacity:1!important}
+  .motion-card{opacity:1!important;transform:none!important;transition:none!important}
   .menu-panel,.menu-scrim,.menu-trigger span,.menu-trigger span:before,.menu-trigger span:after{transition:none}
 }
 </style>
@@ -263,11 +332,11 @@ section{position:relative}
 <canvas id="fire-smoke-canvas" class="global-fire-canvas" aria-hidden="true"></canvas>
 <header class="nav">
 <a class="wordmark" href="#top">NORATO<b>charcutería</b><span class="dot"></span></a>
-<nav class="nav-links"><a href="#platos">Platos</a><a href="#proceso">Proceso</a><a href="#sabores">Sabores</a></nav>
+<nav class="nav-links"><a href="#sabores">Sabores</a><a href="#platos">Platos</a><a href="#proceso">Proceso</a></nav>
 <button class="menu-trigger" id="menu-trigger" type="button" aria-label="Abrir menú" aria-expanded="false"><span></span></button>
 </header>
 <div class="menu-scrim" id="menu-scrim"></div>
-<aside class="menu-panel" id="menu-panel" aria-hidden="true"><h2>Hagamos<br><span style="color:var(--tomate)">mesa.</span></h2><nav><a href="#top">Inicio <span>↗</span></a><a href="#platos">La receta <span>↗</span></a><a href="#proceso">Proceso artesanal <span>↗</span></a><a href="picante/">Picante <span>01</span></a><a href="jamonado/">Jamonado <span>02</span></a><a href="cervecero-ahumado/">Cervecero ahumado <span>03</span></a><a class="menu-wa" href="https://wa.me/573182745713?text=Hola%2C%20quiero%20conocer%20y%20pedir%20el%20salchich%C3%B3n%20de%20Norato." target="_blank" rel="noopener">Pedir por WhatsApp</a></nav></aside>
+<aside class="menu-panel" id="menu-panel" aria-hidden="true"><h2>Hagamos<br><span style="color:var(--tomate)">mesa.</span></h2><nav><a href="#top">Inicio <span>↗</span></a><a href="#sabores">Los 3 Sabores <span>↗</span></a><a href="#platos">Platos deliciosos <span>↗</span></a><a href="#proceso">Proceso artesanal <span>↗</span></a><a href="picante/">Picante <span>01</span></a><a href="jamonado/">Jamonado <span>02</span></a><a href="cervecero-ahumado/">Cervecero ahumado <span>03</span></a><a class="menu-wa" href="https://wa.me/573182745713?text=Hola%2C%20quiero%20conocer%20y%20pedir%20el%20salchich%C3%B3n%20de%20Norato." target="_blank" rel="noopener">Pedir por WhatsApp</a></nav></aside>
 
 <main id="top">
 <!-- HERO -->
@@ -298,135 +367,7 @@ section{position:relative}
 <span>Salchichón artesanal <em>✺</em></span><span>lotes pequeños <em>✺</em></span><span>picante · jamonado · cervecero <em>✺</em></span><span>para compartir <em>✺</em></span>
 </div></div>
 
-<!-- PLATOS -->
-<section id="platos" class="platos">
-<div class="sec-head reveal">
-<div><div class="kicker"><span class="sun-badge">✿</span> Qué cocinar con Norato</div>
-<h2 class="title-letters"><span class="word-wrap">Platos</span> <span class="word-wrap hl">deliciosos</span></h2></div>
-<div class="sec-note">todas las ideas, sin recetar — toca para ver grande</div>
-</div>
-<div class="grid-platos">
-<figure class="plato p-a reveal"><img src="assets/sandwich.png" alt="Sándwich de salchichón Norato"><span class="float-badge">el clásico</span><span class="plato-hint">🔍 Toca para ampliar</span><figcaption class="cap"><strong>Sándwich del mediodía</strong><span>01</span></figcaption></figure>
-<figure class="plato p-b reveal"><img src="assets/ensalada.png" alt="Ensalada fresca con salchichón"><span class="float-badge">fresca ✺</span><span class="plato-hint">🔍 Toca para ampliar</span><figcaption class="cap"><strong>Ensalada de la tarde</strong><span>02</span></figcaption></figure>
-<figure class="plato p-c reveal"><img src="assets/manos-corte.png" alt="Corte artesanal al momento"><span class="plato-hint">🔍 Toca para ampliar</span><figcaption class="cap"><strong>Corte al momento</strong><span>03</span></figcaption></figure>
-<figure class="plato p-d reveal"><img src="assets/brindis.png" alt="Brindis con salchichón y pan"><span class="float-badge">de la mesa larga</span><span class="plato-hint">🔍 Toca para ampliar</span><figcaption class="cap"><strong>Brindis y tabla</strong><span>04</span></figcaption></figure>
-<figure class="plato p-e reveal"><img src="assets/hero-mesa.png" alt="Tabla completa con salchichón"><span class="plato-hint">🔍 Toca para ampliar</span><figcaption class="cap"><strong>La tabla completa</strong><span>05</span></figcaption></figure>
-</div>
-</section>
-
-<!-- PROCESO -->
-<section id="proceso" class="proceso">
-  <div class="proceso-header reveal">
-    <div class="kicker"><span class="sun-badge">🔥</span> El Oficio y el Fuego</div>
-    <h2 class="title-letters"><span class="word-wrap">Del taller</span> <span class="word-wrap hl">a la mesa.</span></h2>
-    <p>Sin atajos industriales ni prisas. Carne de cerdo seleccionada, tripa natural atada a mano, leña de roble en el ahumadero y reposo paciente con receta familiar de los 80.</p>
-  </div>
-
-  <div class="proceso-grid">
-    <!-- Paso 1 -->
-    <article class="proceso-card reveal">
-      <div class="proceso-card-img">
-        <img src="assets/proceso-1-seleccion.jpg" alt="Selección de carne magra y tocino fresco para salchichón Norato">
-        <span class="proceso-badge">Ingredientes</span>
-        <span class="proceso-step-num">01</span>
-      </div>
-      <div class="proceso-card-body">
-        <h3>Carne magra y tocino de primera</h3>
-        <p>Pierna de cerdo fresca picada a cuchillo con dados de tocino firme, pimienta negra entera, sal marina y especias naturales seleccionadas.</p>
-      </div>
-    </article>
-
-    <!-- Paso 2 -->
-    <article class="proceso-card reveal">
-      <div class="proceso-card-img">
-        <img src="assets/photo_4_2026-11-07_20-51-27.jpg" alt="Atado artesanal en las puntas con tripa natural">
-        <span class="proceso-badge">Tripa natural</span>
-        <span class="proceso-step-num">02</span>
-      </div>
-      <div class="proceso-card-body">
-        <h3>Embutido y atado en los extremos</h3>
-        <p>Embutido tradicional en tripa natural y amarrado a mano en las puntas con hilo de algodón puro. Cada pieza recibe el calibre, la tensión y la lazada tradicional para colgar en reposo.</p>
-      </div>
-    </article>
-
-    <!-- Paso 3 -->
-    <article class="proceso-card reveal">
-      <div class="proceso-card-img">
-        <img src="assets/proceso-3-ahumadero.jpg" alt="Ahumadero tradicional con leña de roble y brasas">
-        <span class="proceso-badge">Leña de roble</span>
-        <span class="proceso-step-num">03</span>
-      </div>
-      <div class="proceso-card-body">
-        <h3>Ahumado lento en brasas</h3>
-        <p>Horas continuas de humo aromático de roble acariciando las varas, forjando el tono dorado rojizo y el inconfundible aroma tostado de Norato.</p>
-      </div>
-    </article>
-
-    <!-- Paso 4 -->
-    <article class="proceso-card reveal">
-      <div class="proceso-card-img">
-        <img src="assets/photo_1_2026-11-07_20-51-27.jpg" alt="Salchichón artesanal Norato reposando en varas del taller">
-        <span class="proceso-badge">Taller Norato</span>
-        <span class="proceso-step-num">04</span>
-      </div>
-      <div class="proceso-card-body">
-        <h3>Oteo y maduración en reposo</h3>
-        <p>Lotes colgados en reposo en nuestro taller para fijar textura, humedad y aromas. Una curación donde el tiempo hace lo que ningún aditivo puede igualar.</p>
-      </div>
-    </article>
-
-    <!-- Paso 5 -->
-    <article class="proceso-card reveal">
-      <div class="proceso-card-img">
-        <img src="assets/photo_5_2026-11-07_20-51-27.jpg" alt="Lote Jamonado Norato empacado al vacío de 450g listo para entrega">
-        <span class="proceso-badge">Lote 450g</span>
-        <span class="proceso-step-num">05</span>
-      </div>
-      <div class="proceso-card-body">
-        <h3>Frescura sellada al vacío</h3>
-        <p>Empaque al vacío que resguarda la jugosidad, el brillo y toda la profundidad de sabor hasta el instante en que lo cortas en tu cocina.</p>
-      </div>
-    </article>
-  </div>
-
-  <!-- Video Showcase -->
-  <div class="proceso-video-box reveal" style="text-align:center">
-    <div class="proceso-video-info" style="text-align:center">
-      <div class="kicker" style="justify-content:center;margin:0 auto 14px"><span class="sun-badge">🎥</span> Desde el taller</div>
-      <h3 style="margin:12px auto 16px;text-align:center">El producto real, en movimiento.</h3>
-      <p style="margin:0 auto 24px;text-align:center">Mira de cerca la consistencia, el brillo y la firmeza de nuestros salchichones artesanales recién salidos de la línea de elaboración en el taller familiar.</p>
-      <a class="hero-cta" style="margin:0 auto" href="#sabores">Ver los 3 sabores <span>↓</span></a>
-    </div>
-    <div class="proceso-video-wrapper">
-      <video controls playsinline preload="metadata" poster="assets/photo_1_2026-11-07_20-51-27.jpg">
-        <source src="assets/video_2026-11-07_20-51-27.mp4" type="video/mp4">
-        Tu navegador no soporta el reproductor de video.
-      </video>
-    </div>
-  </div>
-</section>
-
-<!-- BRINDIS (La Sobremesa) -->
-<section class="brindis">
-  <div class="brindis-bg">
-    <img src="assets/brindis.png" alt="Mesa compartida con salchichón Norato y brindis">
-  </div>
-  <div class="brindis-card reveal">
-    <div class="kicker" style="justify-content:center;margin-bottom:18px"><span class="sun-badge">🍷</span> La Sobremesa y el Compartir</div>
-    <h2 style="text-align:center">Para reírse con pan,<br><span class="hl">vino y buena charla.</span></h2>
-    <p class="brindis-tagline" style="text-align:center">El salchichón artesanal no se hizo para comerse con prisa ni solemnidad.</p>
-    <div class="brindis-highlights">
-      <div class="brindis-pill"><span>🥖</span> Pan crujiente al centro</div>
-      <div class="brindis-pill"><span>🔥</span> Sabor a leña y roble</div>
-      <div class="brindis-pill"><span>🥂</span> Amigos que se quedan</div>
-    </div>
-    <div class="brindis-action" style="display:flex;justify-content:center">
-      <a class="hero-cta-red-large" href="https://wa.me/573182745713?text=Hola%2C%20quiero%20hacer%20un%20pedido%20de%20salchich%C3%B3n%20Norato%20para%20compartir." target="_blank" rel="noopener">Pedir para tu mesa por WhatsApp ↗</a>
-    </div>
-  </div>
-</section>
-
-<!-- SABORES -->
+<!-- SABORES (Tres expresiones artesanales - Ahora Primero) -->
 <section id="sabores" class="sabores">
   <div class="sec-head reveal">
     <div class="kicker" style="color:var(--oro);justify-content:center;margin:0 auto 12px"><span class="sun-badge">☀</span> Tres expresiones artesanales</div>
@@ -437,8 +378,8 @@ section{position:relative}
   </div>
 
   <div class="sabor-grid">
-    <!-- 01 PICANTE -->
-    <article class="sabor reveal sabor-picante" onclick="location.href='picante/'" style="cursor:pointer" role="link" tabindex="0">
+    <!-- 01 PICANTE (Entrada lateral izquierda) -->
+    <article class="sabor motion-card motion-from-left sabor-picante" onclick="location.href='picante/'" style="cursor:pointer" role="link" tabindex="0">
       <div class="sabor-top">
         <span class="num">01</span>
         <span class="sabor-badge" style="background:#e2482b;color:#fff">Picante</span>
@@ -458,8 +399,8 @@ section{position:relative}
       </div>
     </article>
 
-    <!-- 02 JAMONADO -->
-    <article class="sabor reveal sabor-jamonado" onclick="location.href='jamonado/'" style="cursor:pointer" role="link" tabindex="0">
+    <!-- 02 JAMONADO (Entrada desde abajo con escala) -->
+    <article class="sabor motion-card motion-from-bottom sabor-jamonado" onclick="location.href='jamonado/'" style="cursor:pointer" role="link" tabindex="0">
       <div class="sabor-top">
         <span class="num">02</span>
         <span class="sabor-badge" style="background:#8e44ad;color:#fff">Jamonado</span>
@@ -479,8 +420,8 @@ section{position:relative}
       </div>
     </article>
 
-    <!-- 03 CERVECERO AHUMADO -->
-    <article class="sabor reveal sabor-cervecero" onclick="location.href='cervecero-ahumado/'" style="cursor:pointer" role="link" tabindex="0">
+    <!-- 03 CERVECERO AHUMADO (Entrada lateral derecha) -->
+    <article class="sabor motion-card motion-from-right sabor-cervecero" onclick="location.href='cervecero-ahumado/'" style="cursor:pointer" role="link" tabindex="0">
       <div class="sabor-top">
         <span class="num">03</span>
         <span class="sabor-badge" style="background:#d87916;color:#fff">Cervecero</span>
@@ -499,6 +440,134 @@ section{position:relative}
         <a class="sabor-cta" style="background:#d87916" href="cervecero-ahumado/">Descubrir Cervecero ↗</a>
       </div>
     </article>
+  </div>
+</section>
+
+<!-- PLATOS -->
+<section id="platos" class="platos">
+<div class="sec-head reveal">
+<div><div class="kicker"><span class="sun-badge">✿</span> Qué cocinar con Norato</div>
+<h2 class="title-letters"><span class="word-wrap">Platos</span> <span class="word-wrap hl">deliciosos</span></h2></div>
+<div class="sec-note">todas las ideas, sin recetar — toca para ver grande</div>
+</div>
+<div class="grid-platos">
+<figure class="plato motion-card motion-slide-left p-a"><img src="assets/sandwich.png" alt="Sándwich de salchichón Norato"><span class="float-badge">el clásico</span><span class="plato-hint">🔍 Toca para ampliar</span><figcaption class="cap"><strong>Sándwich del mediodía</strong><span>01</span></figcaption></figure>
+<figure class="plato motion-card motion-slide-right p-b"><img src="assets/ensalada.png" alt="Ensalada fresca con salchichón"><span class="float-badge">fresca ✺</span><span class="plato-hint">🔍 Toca para ampliar</span><figcaption class="cap"><strong>Ensalada de la tarde</strong><span>02</span></figcaption></figure>
+<figure class="plato motion-card motion-zoom-up p-c"><img src="assets/manos-corte.png" alt="Corte artesanal al momento"><span class="plato-hint">🔍 Toca para ampliar</span><figcaption class="cap"><strong>Corte al momento</strong><span>03</span></figcaption></figure>
+<figure class="plato motion-card motion-slide-left p-d"><img src="assets/brindis.png" alt="Brindis con salchichón y pan"><span class="float-badge">de la mesa larga</span><span class="plato-hint">🔍 Toca para ampliar</span><figcaption class="cap"><strong>Brindis y tabla</strong><span>04</span></figcaption></figure>
+<figure class="plato motion-card motion-slide-right p-e"><img src="assets/hero-mesa.png" alt="Tabla completa con salchichón"><span class="plato-hint">🔍 Toca para ampliar</span><figcaption class="cap"><strong>La tabla completa</strong><span>05</span></figcaption></figure>
+</div>
+</section>
+
+<!-- PROCESO -->
+<section id="proceso" class="proceso">
+  <div class="proceso-header reveal">
+    <div class="kicker"><span class="sun-badge">🔥</span> El Oficio y el Fuego</div>
+    <h2 class="title-letters"><span class="word-wrap">Del taller</span> <span class="word-wrap hl">a la mesa.</span></h2>
+    <p>Sin atajos industriales ni prisas. Carne de cerdo seleccionada, tripa natural atada a mano, leña de roble en el ahumadero y reposo paciente con receta familiar de los 80.</p>
+  </div>
+
+  <div class="proceso-grid">
+    <!-- Paso 1 (Diagonal inferior izquierda) -->
+    <article class="proceso-card motion-card motion-from-bl reveal">
+      <div class="proceso-card-img">
+        <img src="assets/proceso-1-seleccion.jpg" alt="Selección de carne magra y tocino fresco para salchichón Norato">
+        <span class="proceso-badge">Ingredientes</span>
+        <span class="proceso-step-num">01</span>
+      </div>
+      <div class="proceso-card-body">
+        <h3>Carne magra y tocino de primera</h3>
+        <p>Pierna de cerdo fresca picada a cuchillo con dados de tocino firme, pimienta negra entera, sal marina y especias naturales seleccionadas.</p>
+      </div>
+    </article>
+
+    <!-- Paso 2 (Desde abajo con elevación) -->
+    <article class="proceso-card motion-card motion-from-bottom reveal">
+      <div class="proceso-card-img">
+        <img src="assets/photo_4_2026-11-07_20-51-27.jpg" alt="Atado artesanal en las puntas con tripa natural">
+        <span class="proceso-badge">Tripa natural</span>
+        <span class="proceso-step-num">02</span>
+      </div>
+      <div class="proceso-card-body">
+        <h3>Embutido y atado en los extremos</h3>
+        <p>Embutido tradicional en tripa natural y amarrado a mano en las puntas con hilo de algodón puro. Cada pieza recibe el calibre, la tensión y la lazada tradicional para colgar en reposo.</p>
+      </div>
+    </article>
+
+    <!-- Paso 3 (Diagonal inferior derecha) -->
+    <article class="proceso-card motion-card motion-from-br reveal">
+      <div class="proceso-card-img">
+        <img src="assets/proceso-3-ahumadero.jpg" alt="Ahumadero tradicional con leña de roble y brasas">
+        <span class="proceso-badge">Leña de roble</span>
+        <span class="proceso-step-num">03</span>
+      </div>
+      <div class="proceso-card-body">
+        <h3>Ahumado lento en brasas</h3>
+        <p>Horas continuas de humo aromático de roble acariciando las varas, forjando el tono dorado rojizo y el inconfundible aroma tostado de Norato.</p>
+      </div>
+    </article>
+
+    <!-- Paso 4 (Lateral izquierda) -->
+    <article class="proceso-card motion-card motion-slide-left reveal">
+      <div class="proceso-card-img">
+        <img src="assets/photo_1_2026-11-07_20-51-27.jpg" alt="Salchichón artesanal Norato reposando en varas del taller">
+        <span class="proceso-badge">Taller Norato</span>
+        <span class="proceso-step-num">04</span>
+      </div>
+      <div class="proceso-card-body">
+        <h3>Oteo y maduración en reposo</h3>
+        <p>Lotes colgados en reposo en nuestro taller para fijar textura, humedad y aromas. Una curación donde el tiempo hace lo que ningún aditivo puede igualar.</p>
+      </div>
+    </article>
+
+    <!-- Paso 5 (Lateral derecha) -->
+    <article class="proceso-card motion-card motion-slide-right reveal">
+      <div class="proceso-card-img">
+        <img src="assets/photo_5_2026-11-07_20-51-27.jpg" alt="Lote Jamonado Norato empacado al vacío de 450g listo para entrega">
+        <span class="proceso-badge">Lote 450g</span>
+        <span class="proceso-step-num">05</span>
+      </div>
+      <div class="proceso-card-body">
+        <h3>Frescura sellada al vacío</h3>
+        <p>Empaque al vacío que resguarda la jugosidad, el brillo y toda la profundidad de sabor hasta el instante en que lo cortas en tu cocina.</p>
+      </div>
+    </article>
+  </div>
+
+  <!-- Video Showcase (Zoom desde profundidad) -->
+  <div class="proceso-video-box motion-card motion-zoom-up reveal" style="text-align:center">
+    <div class="proceso-video-info" style="text-align:center">
+      <div class="kicker" style="justify-content:center;margin:0 auto 14px"><span class="sun-badge">🎥</span> Desde el taller</div>
+      <h3 style="margin:12px auto 16px;text-align:center">El producto real, en movimiento.</h3>
+      <p style="margin:0 auto 24px;text-align:center">Mira de cerca la consistencia, el brillo y la firmeza de nuestros salchichones artesanales recién salidos de la línea de elaboración en el taller familiar.</p>
+      <a class="hero-cta" style="margin:0 auto" href="#sabores">Ver los 3 sabores <span>↑</span></a>
+    </div>
+    <div class="proceso-video-wrapper">
+      <video controls playsinline preload="metadata" poster="assets/photo_1_2026-11-07_20-51-27.jpg">
+        <source src="assets/video_2026-11-07_20-51-27.mp4" type="video/mp4">
+        Tu navegador no soporta el reproductor de video.
+      </video>
+    </div>
+  </div>
+</section>
+
+<!-- BRINDIS (La Sobremesa) -->
+<section class="brindis">
+  <div class="brindis-bg">
+    <img src="assets/brindis.png" alt="Mesa compartida con salchichón Norato y brindis">
+  </div>
+  <div class="brindis-card motion-card motion-zoom-up reveal">
+    <div class="kicker" style="justify-content:center;margin-bottom:18px"><span class="sun-badge">🍷</span> La Sobremesa y el Compartir</div>
+    <h2 style="text-align:center">Para reírse con pan,<br><span class="hl">vino y buena charla.</span></h2>
+    <p class="brindis-tagline" style="text-align:center">El salchichón artesanal no se hizo para comerse con prisa ni solemnidad.</p>
+    <div class="brindis-highlights">
+      <div class="brindis-pill"><span>🥖</span> Pan crujiente al centro</div>
+      <div class="brindis-pill"><span>🔥</span> Sabor a leña y roble</div>
+      <div class="brindis-pill"><span>🥂</span> Amigos que se quedan</div>
+    </div>
+    <div class="brindis-action" style="display:flex;justify-content:center">
+      <a class="hero-cta-red-large" href="https://wa.me/573182745713?text=Hola%2C%20quiero%20hacer%20un%20pedido%20de%20salchich%C3%B3n%20Norato%20para%20compartir." target="_blank" rel="noopener">Pedir para tu mesa por WhatsApp ↗</a>
+    </div>
   </div>
 </section>
 
@@ -590,6 +659,29 @@ document.querySelectorAll('.title-letters').forEach(el=>{el.getBoundingClientRec
 // ---- reveals
 const rObs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');rObs.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(e=>rObs.observe(e));
+
+// ---- Motion scroll cards: activación dinámica por scroll para todas las tarjetas
+const motionCards = document.querySelectorAll('.motion-card');
+const motionObs = new IntersectionObserver((entries, obs) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      obs.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.10,
+  rootMargin: '0px 0px -40px 0px'
+});
+
+motionCards.forEach(card => {
+  const rect = card.getBoundingClientRect();
+  if (rect.top < window.innerHeight * 0.88) {
+    card.classList.add('is-visible');
+  } else {
+    motionObs.observe(card);
+  }
+});
 
 // ---- Lightbox interactivo para Platos Deliciosos
 const lb = document.getElementById('plato-lightbox');
