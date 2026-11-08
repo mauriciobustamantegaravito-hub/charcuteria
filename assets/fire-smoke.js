@@ -249,19 +249,19 @@
    */
   function buildFlamePoints() {
     flamePoints.length = 0;
-    var totalCount = isMobile ? 12 : 22;
+    var totalCount = isMobile ? 20 : 38;
 
     // --- Generar posiciones X agrupadas en clusters ---
-    // Crear 3-5 "hot spots" (centros de cluster) distribuidos por el ancho
-    var numClusters = isMobile ? 3 : 5;
+    // Crear 4-7 "hot spots" (centros de cluster) distribuidos por el ancho
+    var numClusters = isMobile ? 4 : 7;
     var clusterCenters = [];
     for (var c = 0; c < numClusters; c++) {
-      clusterCenters.push(width * 0.1 + Math.random() * width * 0.8);
+      clusterCenters.push(width * 0.08 + Math.random() * width * 0.84);
     }
 
     // Decidir cuántas llamas hero (grandes), medianas y pequeñas
-    var numLarge = isMobile ? 1 : 3;
-    var numMedium = Math.floor(totalCount * 0.35);
+    var numLarge = isMobile ? 2 : 4;
+    var numMedium = Math.floor(totalCount * 0.45);
     var numSmall = totalCount - numLarge - numMedium;
 
     var sizeList = [];
@@ -280,27 +280,26 @@
 
       // Elegir un cluster center al azar y dispersar alrededor
       var cluster = clusterCenters[Math.floor(Math.random() * numClusters)];
-      var spread = isMobile ? 60 : 90;
+      var spread = isMobile ? 70 : 100;
       var fx = cluster + (Math.random() - 0.5) * spread * 2;
       // Mantener dentro de pantalla con margen
       fx = Math.max(15, Math.min(width - 15, fx));
 
-      // baseY variable entre 75% y 95% del alto de pantalla
-      var baseY = height * 0.75 + Math.random() * height * 0.20;
+      // baseY variable entre 74% y 95% del alto de pantalla
+      var baseY = height * 0.74 + Math.random() * height * 0.22;
 
-      // Alturas según clase de tamaño
+      // Alturas según clase de tamaño (más fuego y más presencia)
       var maxH, baseW;
       if (sizeClass === 'large') {
-        maxH = 180 + Math.random() * 70;  // 180-250
-        baseW = 28 + Math.random() * 18;
-        // Las llamas grandes tienen posiciones Y ligeramente diferentes
-        baseY = height * 0.78 + Math.random() * height * 0.10;
+        maxH = 220 + Math.random() * 90;  // 220-310px
+        baseW = 34 + Math.random() * 22;
+        baseY = height * 0.76 + Math.random() * height * 0.12;
       } else if (sizeClass === 'medium') {
-        maxH = 60 + Math.random() * 40;   // 60-100
-        baseW = 18 + Math.random() * 14;
+        maxH = 85 + Math.random() * 65;   // 85-150px
+        baseW = 22 + Math.random() * 16;
       } else {
-        maxH = 25 + Math.random() * 15;   // 25-40
-        baseW = 10 + Math.random() * 10;
+        maxH = 32 + Math.random() * 26;   // 32-58px
+        baseW = 12 + Math.random() * 12;
       }
 
       // Frecuencias de oscilación: pequeñas rápidas, grandes lentas y majestuosas
@@ -312,7 +311,7 @@
         baseW: baseW,
         maxH: maxH,
         sizeClass: sizeClass,
-        // Frecuencias de movimiento (más rápidas para pequeñas, lentas para grandes)
+        // Frecuencias de movimiento
         f1: (0.010 + Math.random() * 0.014) * speedMul,
         f2: (0.028 + Math.random() * 0.03) * speedMul,
         f3: (0.003 + Math.random() * 0.003) * speedMul,
@@ -323,20 +322,16 @@
         p4: Math.random() * Math.PI * 2,
         noiseSeed: Math.random() * 1000,
         // --- Ciclo de vida independiente ---
-        // Estado: 'burning', 'fading', 'dormant', 'igniting'
-        state: Math.random() < 0.5 ? 'burning' : 'dormant',
-        // Opacidad actual del ciclo (0 = invisible, 1 = completamente visible)
-        lifeAlpha: Math.random() < 0.5 ? 1.0 : 0.0,
-        // Duración de cada fase en "frames" (dt-based)
+        // Mayor probabilidad de arrancar ardiendo para tener presencia continua
+        state: Math.random() < 0.75 ? 'burning' : 'dormant',
+        lifeAlpha: Math.random() < 0.75 ? (0.6 + Math.random() * 0.4) : 0.0,
         burnDuration: 0,
         burnTimer: 0,
         dormantDuration: 0,
         dormantTimer: 0,
-        // Velocidad de fade in/out
         fadeSpeed: 0
       });
 
-      // Inicializar los timers del ciclo de vida
       var fp = flamePoints[flamePoints.length - 1];
       resetLifecycleTimers(fp);
     }
@@ -344,22 +339,20 @@
 
   /**
    * Resetea los timers del ciclo de vida de una llama.
+   * Más tiempo encendidas y menos tiempo dormidas para más fuego constante.
    */
   function resetLifecycleTimers(fp) {
     if (fp.sizeClass === 'small') {
-      // Pequeñas: arden poco, descansan poco, parpadean rápido
-      fp.burnDuration = 80 + Math.random() * 200;
-      fp.dormantDuration = 60 + Math.random() * 180;
+      fp.burnDuration = 140 + Math.random() * 280;
+      fp.dormantDuration = 35 + Math.random() * 70;
       fp.fadeSpeed = 0.04 + Math.random() * 0.04;
     } else if (fp.sizeClass === 'large') {
-      // Grandes: arden mucho, descansan mucho, transiciones lentas
-      fp.burnDuration = 400 + Math.random() * 600;
-      fp.dormantDuration = 200 + Math.random() * 500;
+      fp.burnDuration = 600 + Math.random() * 900;
+      fp.dormantDuration = 80 + Math.random() * 180;
       fp.fadeSpeed = 0.008 + Math.random() * 0.012;
     } else {
-      // Medianas: intermedio
-      fp.burnDuration = 150 + Math.random() * 350;
-      fp.dormantDuration = 100 + Math.random() * 300;
+      fp.burnDuration = 260 + Math.random() * 500;
+      fp.dormantDuration = 45 + Math.random() * 110;
       fp.fadeSpeed = 0.02 + Math.random() * 0.025;
     }
     fp.burnTimer = 0;
@@ -478,16 +471,16 @@
   var maxSmoke;
 
   var smokeTex = document.createElement('canvas');
-  smokeTex.width = 200; smokeTex.height = 200;
+  smokeTex.width = 240; smokeTex.height = 240;
   var stx = smokeTex.getContext('2d');
   if (stx) {
-    var sg = stx.createRadialGradient(100, 100, 0, 100, 100, 100);
-    sg.addColorStop(0, 'rgba(70, 58, 50, 0.3)');
-    sg.addColorStop(0.3, 'rgba(55, 45, 38, 0.18)');
-    sg.addColorStop(0.6, 'rgba(40, 30, 25, 0.08)');
+    var sg = stx.createRadialGradient(120, 120, 0, 120, 120, 120);
+    sg.addColorStop(0, 'rgba(85, 70, 60, 0.44)');
+    sg.addColorStop(0.3, 'rgba(68, 55, 46, 0.28)');
+    sg.addColorStop(0.65, 'rgba(48, 36, 28, 0.12)');
     sg.addColorStop(1, 'rgba(18, 12, 10, 0)');
     stx.fillStyle = sg;
-    stx.fillRect(0, 0, 200, 200);
+    stx.fillRect(0, 0, 240, 240);
   }
 
   /**
@@ -505,13 +498,13 @@
     if (active.length > 0) {
       var chosen = active[Math.floor(Math.random() * active.length)];
       // Pequeña dispersión alrededor de la llama
-      return chosen.x + (Math.random() - 0.5) * 40;
+      return chosen.x + (Math.random() - 0.5) * 50;
     }
     return Math.random() * width;
   }
 
   function initSmoke() {
-    maxSmoke = isMobile ? 12 : 25;
+    maxSmoke = isMobile ? 30 : 60;
     smokePuffs.length = 0;
     for (var i = 0; i < maxSmoke; i++) smokePuffs.push(new Puff(true));
   }
@@ -519,23 +512,23 @@
   function Puff(scatter) {
     this.reset();
     if (scatter) {
-      this.y = height * 0.5 + Math.random() * height * 0.3;
+      this.y = height * 0.4 + Math.random() * height * 0.45;
       this.life = Math.random() * this.maxLife;
     }
   }
   Puff.prototype.reset = function () {
     this.x = getSmokeSrcX();
-    this.y = height * 0.78 - Math.random() * 30;
-    this.vy = -(Math.random() * 0.8 + 0.3) * SPEED;
-    this.vx = (Math.random() - 0.48) * 0.4;
-    this.r = Math.random() * 50 + 40;
-    this.maxR = this.r * (Math.random() * 2.2 + 2.0);
-    this.grow = (Math.random() * 0.22 + 0.1) * SPEED;
+    this.y = height * 0.78 - Math.random() * 40;
+    this.vy = -(Math.random() * 0.9 + 0.35) * SPEED;
+    this.vx = (Math.random() - 0.48) * 0.45;
+    this.r = Math.random() * 65 + 48;
+    this.maxR = this.r * (Math.random() * 2.4 + 2.2);
+    this.grow = (Math.random() * 0.25 + 0.12) * SPEED;
     this.rot = Math.random() * Math.PI * 2;
     this.rotS = (Math.random() - 0.5) * 0.004 * SPEED;
-    this.maxLife = Math.random() * 350 + 250;
+    this.maxLife = Math.random() * 380 + 260;
     this.life = this.maxLife;
-    this.maxA = Math.random() * 0.25 + 0.12;
+    this.maxA = Math.random() * 0.35 + 0.18;
   };
   Puff.prototype.update = function (wind, dt) {
     this.life -= dt;

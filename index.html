@@ -14,11 +14,11 @@
 :root{--sun:#fff6e5;--sun2:#ffe9c7;--tomate:#e2482b;--oliva:#5f7f3a;--oro:#f2a71b;--tinta:#2a2118;--ease:cubic-bezier(.16,1,.3,1)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#120904;color:var(--sun);font-family:Manrope,system-ui,sans-serif;overflow-x:hidden}
 /* ===== NAV ===== */
-.nav{position:fixed;z-index:50;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:16px 4vw;background:linear-gradient(#120904f5,#12090400);backdrop-filter:blur(10px)}
-.wordmark{font:700 20px 'Space Grotesk';text-decoration:none;color:var(--sun);display:flex;align-items:center;gap:10px}
+.nav{position:fixed;z-index:50;top:0;left:0;right:0;display:flex;align-items:center;justify-content:center;padding:16px 4vw;background:linear-gradient(#120904f5,#12090400);backdrop-filter:blur(10px)}
+.wordmark{font:700 20px 'Space Grotesk';text-decoration:none;color:var(--sun);display:flex;align-items:center;gap:10px;margin:0 auto}
 .wordmark b{color:var(--tomate);font-weight:700}
 .wordmark .dot{width:12px;height:12px;border-radius:50%;background:var(--oro);animation:pop 2.4s var(--ease) infinite}
-.nav-links{display:flex;gap:22px;font:600 12px Manrope;letter-spacing:.08em;text-transform:uppercase}
+.nav-links{display:flex;gap:22px;font:600 12px Manrope;letter-spacing:.08em;text-transform:uppercase;position:absolute;left:4vw}
 .nav-links a{color:var(--sun);text-decoration:none;position:relative;padding:4px 0}
 .nav-links a:after{content:"";position:absolute;left:0;bottom:0;width:100%;height:2px;background:var(--tomate);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
 .nav-links a:hover:after{transform:scaleX(1)}
@@ -31,24 +31,24 @@
 .ticker-track span:nth-child(4n+1){color:var(--sun)}.ticker-track span:nth-child(4n+2){color:var(--oro)}.ticker-track span:nth-child(4n+3){color:#d8f09b}.ticker-track span:nth-child(4n){color:#ffd0c1}
 .ticker-track em{font-style:normal;color:var(--oro)}
 /* ===== HERO ===== */
-.global-fire-canvas{position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:1}
+.global-fire-canvas{position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:1;filter:blur(3.5px) contrast(1.1) brightness(1.05);will-change:filter}
 main{position:relative;z-index:2}
-.hero{min-height:100svh;position:relative;display:grid;align-items:end;overflow:hidden;padding:12vh 5vw 18vh;min-width:0;background:transparent;z-index:2}
+.hero{min-height:100svh;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;overflow:hidden;padding:14vh 5vw 12vh;min-width:0;background:transparent;z-index:2}
 
 
 
 
 
-.hero-copy{position:relative;z-index:4;width:min(100%,760px);max-width:760px;min-width:0;overflow-wrap:anywhere}
-.kicker{display:inline-flex;align-items:center;gap:10px;font:700 12px 'Space Grotesk';letter-spacing:.22em;text-transform:uppercase;color:var(--tomate);margin-bottom:22px}
+.hero-copy{position:relative;z-index:4;width:min(100%,820px);max-width:820px;min-width:0;margin:0 auto;text-align:center;padding:0!important;background:transparent!important;border:none!important;box-shadow:none!important}
+.kicker{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:700 12px 'Space Grotesk';letter-spacing:.22em;text-transform:uppercase;color:var(--tomate);margin:0 auto 20px}
 .kicker .sun-badge{width:34px;height:34px;border-radius:50%;background:var(--oro);display:grid;place-items:center;font-size:16px;animation:pop 2.4s var(--ease) infinite}
-.hero h1{font:500 clamp(52px,9.5vw,138px)/1.12 'Space Grotesk';letter-spacing:-.03em;margin:0 0 22px;padding:.08em .06em .14em;max-width:100%;min-width:0;overflow-wrap:anywhere;overflow:visible}
+.hero h1{font:500 clamp(52px,9.5vw,138px)/1.12 'Space Grotesk';letter-spacing:-.03em;margin:0 auto 20px;padding:.08em .06em .14em;max-width:100%;min-width:0;overflow-wrap:anywhere;overflow:visible;text-align:center}
 .hero h1 .word-wrap{white-space:nowrap;display:inline;line-height:1.12;overflow:visible}
 .hero h1 .word-wrap:nth-child(2){font-family:'Space Grotesk',Arial,sans-serif;font-style:normal;font-weight:700;letter-spacing:-.055em}
 .hero h1 .hl{color:var(--tomate);position:relative;display:inline-block}
 .hero h1 .hl:after{content:"";position:absolute;left:-2%;bottom:4%;width:104%;height:.18em;background:var(--oro);border-radius:999px;z-index:-1;transform:scaleX(0);transform-origin:left;animation:swipe 1s .9s var(--ease) forwards}
-.hero p{font:400 18px/1.65 Manrope;width:100%;max-width:460px;margin:0 0 30px;color:#e8d5be;overflow-wrap:anywhere}
-.hero .handnote{position:absolute;right:5vw;top:24vh;z-index:4;font:700 30px Caveat;color:#ffe39b;text-shadow:0 3px 12px rgba(42,33,24,.85),0 1px 2px rgba(226,72,43,.8);transform:rotate(-6deg);animation:sway 5s ease-in-out infinite}
+.hero p{font:400 18px/1.65 Manrope;width:100%;max-width:540px;margin:0 auto 28px;color:#e8d5be;overflow-wrap:anywhere;text-align:center}
+.hero .handnote{display:none}
 .hero .handnote:after{content:"";display:block;width:120px;height:6px;background:var(--oro);opacity:.85;box-shadow:0 2px 8px rgba(0,0,0,.4);border-radius:999px;margin-top:6px;transform:rotate(4deg)}
 /* ===== MARQUEE MIDDLE ===== */
 .marquee-mid{background:var(--oro);color:var(--tinta);padding:14px 0;overflow:hidden;transform:rotate(0)}
@@ -163,14 +163,14 @@ footer{padding:40px 5vw 90px;background:var(--tinta);color:#8d8275;font:600 12px
 </style>
 </head>
 <style>
-.hero-copy{padding:clamp(20px,3vw,38px);background:rgba(18,9,4,0.88);border:2px solid rgba(226,72,43,.82);box-shadow:14px 16px 0 rgba(242,167,27,.92);border-radius:4px}.hero h1,.hero h1 .word-wrap,.hero h1 .word-wrap:nth-child(2){font-family:'Space Grotesk',Arial,sans-serif!important;font-style:normal!important;font-weight:700!important;letter-spacing:-.055em}.hero h1{color:var(--sun);text-shadow:none}.hero h1 .hl{color:var(--tomate)}.hero-copy p{color:#e8d5be;text-shadow:none}@media(max-width:760px){.hero-copy{width:calc(100% - 36px);margin:0 18px;padding:22px 20px;box-shadow:9px 11px 0 rgba(242,167,27,.92)}.hero h1{font-size:clamp(48px,14vw,66px);line-height:.94}.hero h1 .word-wrap{white-space:nowrap;overflow-wrap:normal;word-break:normal}}
+.hero-copy{padding:0!important;background:transparent!important;border:none!important;box-shadow:none!important;margin:0 auto;text-align:center}.hero h1,.hero h1 .word-wrap,.hero h1 .word-wrap:nth-child(2){font-family:'Space Grotesk',Arial,sans-serif!important;font-style:normal!important;font-weight:700!important;letter-spacing:-.055em}.hero h1{color:var(--sun);text-shadow:none}.hero h1 .hl{color:var(--tomate)}.hero-copy p{color:#e8d5be;text-shadow:none}@media(max-width:760px){.hero-copy{width:100%!important;margin:0 auto!important;padding:0!important;box-shadow:none!important;background:transparent!important;border:none!important;text-align:center}.hero h1{font-size:clamp(48px,14vw,66px);line-height:.94}.hero h1 .word-wrap{white-space:nowrap;overflow-wrap:normal;word-break:normal}}
 </style>
 <body>
 <canvas id="fire-smoke-canvas" class="global-fire-canvas" aria-hidden="true"></canvas>
 <style>
 @media(max-width:760px){
   .reveal{opacity:1!important;transform:none!important;transition:none!important}
-  .title-letters .letter{opacity:1!important;transform:none!important;animation:none!important}
+  /* mobile animation enabled */
   .platos{padding:76px 18px}.sec-head{margin-bottom:34px}.sec-head h2{font-size:clamp(42px,13vw,58px)}
   .proceso-track{height:400vh}.proceso-sticky{position:sticky;height:100svh;min-height:0;padding:110px 18px 80px;display:flex;align-items:flex-end}.proceso-panel{padding:22px 20px;max-width:100%;width:100%;box-shadow:0 4px 30px rgba(255,120,30,0.2)}.proceso-panel .stepno{font-size:clamp(34px,12vw,56px)}.proceso-panel h3{font-size:34px}
   .brindis{min-height:680px}.brindis-card{margin:0 18px;padding:24px 18px;box-shadow:0 0 60px rgba(255,100,20,0.15)}.brindis-card h2{font-size:clamp(42px,13vw,58px)}.brindis-card h2 .word-wrap{white-space:nowrap;overflow-wrap:normal;word-break:normal}
@@ -180,7 +180,7 @@ footer{padding:40px 5vw 90px;background:var(--tinta);color:#8d8275;font:600 12px
 <header class="nav">
 <style>
 :root{--menu-width:min(88vw,390px)}
-.menu-trigger{appearance:none;border:0;background:var(--tinta);color:var(--sun);width:44px;height:44px;border-radius:50%;display:grid;place-items:center;cursor:pointer;position:relative;z-index:61}
+.menu-trigger{appearance:none;border:0;background:var(--tinta);color:var(--sun);width:44px;height:44px;border-radius:50%;display:grid;place-items:center;cursor:pointer;position:absolute;right:4vw;z-index:61}
 .menu-trigger span,.menu-trigger span:before,.menu-trigger span:after{content:"";display:block;width:18px;height:2px;background:currentColor;transition:transform .35s var(--ease),opacity .25s}.menu-trigger span:before{position:absolute;transform:translateY(-6px)}.menu-trigger span:after{position:absolute;transform:translateY(6px)}.menu-trigger[aria-expanded=true] span{background:transparent}.menu-trigger[aria-expanded=true] span:before{transform:rotate(45deg)}.menu-trigger[aria-expanded=true] span:after{transform:rotate(-45deg)}
 .menu-scrim{position:fixed;inset:0;z-index:58;background:#2a211899;opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s}.menu-panel{position:fixed;z-index:60;inset:0 0 0 auto;width:var(--menu-width);padding:92px 28px 32px;background:var(--sun);transform:translateX(102%);transition:transform .55s var(--ease);box-shadow:-18px 0 50px #2a211833;overflow:auto}.menu-panel.is-open{transform:none}.menu-scrim.is-open{opacity:1;visibility:visible}.menu-panel h2{font:500 42px/.92 'Space Grotesk';margin:0 0 30px}.menu-panel nav{display:grid;gap:6px}.menu-panel a{display:flex;align-items:center;justify-content:space-between;padding:15px 0;border-bottom:1px solid #2a211833;color:var(--tinta);text-decoration:none;font:600 15px 'Space Grotesk'}.menu-panel a span{color:var(--tomate)}.menu-panel .menu-wa{margin-top:26px;padding:16px 18px;border:0;border-radius:999px;background:var(--tomate);color:var(--sun);justify-content:center}
 .hero-copy .hero-cta,.proceso-panel .hero-cta{position:relative;isolation:isolate;display:inline-flex;align-items:center;gap:12px;margin-top:4px;padding:14px 21px;border:2px solid var(--oro);border-radius:999px;background:linear-gradient(135deg,#2a2118 0%,#5d3a22 55%,var(--tomate) 100%);color:var(--sun);text-decoration:none;font:700 13px 'Space Grotesk';letter-spacing:.04em;box-shadow:0 7px 0 #9b5a19,0 12px 24px #2a21184d;overflow:hidden;transition:transform .3s var(--ease),box-shadow .3s var(--ease),filter .3s}.hero-copy .hero-cta:before,.proceso-panel .hero-cta:before{content:"";position:absolute;inset:0;z-index:-1;background:repeating-linear-gradient(125deg,#ffffff12 0 2px,transparent 2px 9px);opacity:.6}.hero-copy .hero-cta:hover,.proceso-panel .hero-cta:hover{transform:translateY(-4px);filter:saturate(1.2);box-shadow:0 10px 0 #9b5a19,0 16px 28px #2a211866}
@@ -203,7 +203,7 @@ footer{padding:40px 5vw 90px;background:var(--tinta);color:#8d8275;font:600 12px
 <div class="hero-copy reveal">
 <div class="kicker"><span class="sun-badge">☀</span> Charcutería Norato</div>
 <h1 class="title-letters"><span class="word-wrap">La mesa</span> <span class="word-wrap">empieza</span> <span class="word-wrap hl">aquí.</span></h1>
-<p>Nuestro salchichón artesanal se hace con pierna de cerdo y tocino, en una selección de primera calidad y con una intención clara: hacerlo de forma honesta, cuidada y artesanal.</p>
+<p>Salchichón artesanal de pierna de cerdo y tocino de primera calidad. Hecho a mano, a fuego lento y con receta de familia.</p>
 <a class="hero-cta" href="#sabores">Descubrir los sabores <span>↓</span></a>
 </div>
 <div class="handnote">¡huele a casa! →</div>
@@ -309,6 +309,6 @@ function closeMenu(){menuTrigger.setAttribute('aria-expanded','false');menuPanel
 function openMenu(){menuTrigger.setAttribute('aria-expanded','true');menuPanel.classList.add('is-open');menuScrim.classList.add('is-open');menuPanel.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
 menuTrigger.addEventListener('click',()=>menuTrigger.getAttribute('aria-expanded')==='true'?closeMenu():openMenu());menuScrim.addEventListener('click',closeMenu);menuPanel.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
 </script>
-<script src="assets/fire-smoke.js?v=8"></script>
+<script src="assets/fire-smoke.js?v=9"></script>
 <script>if ("serviceWorker" in navigator) navigator.serviceWorker.register("/sw.js");</script>
 </body></html>
