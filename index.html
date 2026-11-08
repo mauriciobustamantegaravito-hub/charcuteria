@@ -4,7 +4,27 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Charcutería Norato — Sol y Mesa</title>
-<meta name="description" content="Charcutería Norato: salchichón artesanal para compartir. Platos, mesa y buen rato.">
+<meta name="description" content="Porque el salchichón bueno se cuenta con la boca llena. Salchichón artesanal colombiano ahumado con leña de roble y receta familiar de los 80.">
+
+<!-- Open Graph / WhatsApp / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mauriciobustamantegaravito-hub.github.io/charcuteria/">
+<meta property="og:site_name" content="Charcutería Norato">
+<meta property="og:title" content="Charcutería Norato — Porque el salchichón bueno se cuenta con la boca llena">
+<meta property="og:description" content="Salchichón artesanal elaborado con pierna de cerdo y tocino de primera calidad, ahumado con leña de roble en lotes pequeños. Picante, Jamonado y Cervecero ahumado.">
+<meta property="og:image" content="https://mauriciobustamantegaravito-hub.github.io/charcuteria/assets/proceso-1-seleccion.jpg">
+<meta property="og:image:secure_url" content="https://mauriciobustamantegaravito-hub.github.io/charcuteria/assets/proceso-1-seleccion.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="900">
+<meta property="og:locale" content="es_CO">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Charcutería Norato — Salchichón Artesanal">
+<meta name="twitter:description" content="Porque el salchichón bueno se cuenta con la boca llena. Elaboración artesanal con leña de roble.">
+<meta name="twitter:image" content="https://mauriciobustamantegaravito-hub.github.io/charcuteria/assets/proceso-1-seleccion.jpg">
+
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#e2482b">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,17 +59,16 @@ main{position:relative;z-index:2}
 
 
 
-.hero-copy{position:relative;z-index:4;width:min(100%,820px);max-width:820px;min-width:0;margin:0 auto;text-align:center;padding:0!important;background:transparent!important;border:none!important;box-shadow:none!important}
+.hero-copy{position:relative;z-index:4;width:min(100%,860px);max-width:860px;min-width:0;margin:0 auto;text-align:center;padding:0!important;background:transparent!important;border:none!important;box-shadow:none!important}
 .kicker{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:700 12px 'Space Grotesk';letter-spacing:.22em;text-transform:uppercase;color:var(--tomate);margin:0 auto 20px}
 .kicker .sun-badge{width:34px;height:34px;border-radius:50%;background:var(--oro);display:grid;place-items:center;font-size:16px;animation:pop 2.4s var(--ease) infinite}
-.hero h1{font:500 clamp(52px,9.5vw,138px)/1.12 'Space Grotesk';letter-spacing:-.03em;margin:0 auto 20px;padding:.08em .06em .14em;max-width:100%;min-width:0;overflow-wrap:anywhere;overflow:visible;text-align:center}
-.hero h1 .word-wrap{white-space:nowrap;display:inline-block;line-height:1.12;overflow:visible}
-.hero h1 .word-wrap:nth-child(2){font-family:'Space Grotesk',Arial,sans-serif;font-style:normal;font-weight:700;letter-spacing:-.055em}
-.hero h1 .hl{color:var(--tomate);position:relative;display:inline-block}
-.hero h1 .hl:after{content:"";position:absolute;left:-2%;bottom:4%;width:104%;height:.18em;background:var(--oro);border-radius:999px;z-index:-1;transform:scaleX(0);transform-origin:left;animation:swipe 1s .9s var(--ease) forwards}
-.hero p{font:400 18px/1.65 Manrope;width:100%;max-width:540px;margin:0 auto 28px;color:#e8d5be;overflow-wrap:anywhere;text-align:center}
-.hero .handnote{display:none}
-.hero .handnote:after{content:"";display:block;width:120px;height:6px;background:var(--oro);opacity:.85;box-shadow:0 2px 8px rgba(0,0,0,.4);border-radius:999px;margin-top:6px;transform:rotate(4deg)}
+.hero-slogan{margin:0 auto 20px;text-align:center;padding:0;max-width:100%}
+.slogan-top{display:block;font:700 clamp(32px,6.8vw,78px)/1.08 'Space Grotesk',sans-serif;letter-spacing:-.045em;color:var(--sun);margin-bottom:6px;text-shadow:0 0 40px rgba(0,0,0,0.8)}
+.slogan-script{display:block;font:700 clamp(38px,8.8vw,98px)/1.06 'Caveat',cursive;color:var(--oro);text-shadow:0 0 35px rgba(242,167,27,0.5),0 0 70px rgba(226,72,43,0.3);margin-top:2px;transform:rotate(-1.5deg)}
+.hero-actions{display:flex;justify-content:center;align-items:center;gap:14px;flex-wrap:wrap;margin-top:24px}
+.hero-cta-secondary{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:999px;border:1px solid rgba(242,167,27,0.4);background:rgba(18,9,4,0.7);backdrop-filter:blur(8px);color:var(--sun);text-decoration:none;font:700 13px 'Space Grotesk';letter-spacing:.04em;transition:all .25s ease}
+.hero-cta-secondary:hover{border-color:var(--oro);background:rgba(35,17,8,0.85);transform:translateY(-2px);color:var(--oro)}
+.hero p{font:400 18px/1.65 Manrope;width:100%;max-width:580px;margin:0 auto;color:#e8d5be;overflow-wrap:anywhere;text-align:center}
 /* ===== MARQUEE MIDDLE ===== */
 .marquee-mid{background:var(--oro);color:var(--tinta);padding:14px 0;overflow:hidden;transform:rotate(0)}
 .marquee-mid .ticker-track{animation:tick 20s linear infinite reverse;font-size:15px}
@@ -94,34 +113,42 @@ section{position:relative}
 .proceso-video-wrapper video{width:100%;height:100%;object-fit:cover;display:block}
 .proceso-video-info h3{font:600 clamp(28px,3.8vw,42px)/1.1 'Space Grotesk';margin:14px 0 16px;color:var(--sun)}
 .proceso-video-info p{font:400 16px/1.7 Manrope;color:#e8d5be;margin:0 0 24px}
-/* ===== BRINDIS ===== */
-.brindis{position:relative;min-height:100svh;overflow:hidden;display:grid;place-items:center;background:transparent}
-.brindis .bg{position:absolute;inset:0}
-.brindis .bg img{width:100%;height:100%;object-fit:cover;animation:kenburns 16s ease-in-out infinite alternate-reverse}
-.brindis .bg:after{content:"";position:absolute;inset:0;background:radial-gradient(90% 70% at 50% 45%,transparent 30%,rgba(18,9,4,0.8) 92%)}
-.brindis-card{position:relative;z-index:2;width:min(900px,calc(100% - 36px));text-align:center;padding:28px 4vw;max-width:900px;background:rgba(18,9,4,0.75);border:1px solid rgba(242,167,27,0.3);box-shadow:0 0 60px rgba(255,100,20,0.2);backdrop-filter:blur(4px)}
-.brindis-card h2{font:500 clamp(44px,7vw,110px)/.95 'Space Grotesk';letter-spacing:-.03em;margin:0 0 20px;max-width:100%;overflow-wrap:break-word}
-.brindis-card h2 .word-wrap{white-space:nowrap;display:inline}
-.brindis-card h2 .hl{color:var(--tomate)}
-.brindis-card p{font:700 26px Caveat;color:var(--oro);margin:0 0 26px}
-/* ===== SABORES ===== */
+/* ===== BRINDIS (La Sobremesa) ===== */
+.brindis{position:relative;min-height:85svh;overflow:hidden;display:grid;place-items:center;background:transparent;padding:10vh 5vw}
+.brindis-bg{position:absolute;inset:0;z-index:1;overflow:hidden}
+.brindis-bg img{width:100%;height:100%;object-fit:cover;opacity:.28;filter:saturate(1.1) contrast(1.1)}
+.brindis-bg:after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(18,9,4,0.7) 0%,#120904 90%)}
+.brindis-card{position:relative;z-index:3;width:min(860px,calc(100% - 24px));text-align:center;padding:46px 36px;background:rgba(18,9,4,0.88);backdrop-filter:blur(16px);border:1px solid rgba(242,167,27,0.4);border-radius:28px;box-shadow:0 16px 60px rgba(0,0,0,0.7),0 0 50px rgba(255,100,20,0.15)}
+.brindis-card h2{font:700 clamp(32px,5.8vw,64px)/1.04 'Space Grotesk';margin:0 0 16px;color:var(--sun)}
+.brindis-tagline{font:700 clamp(22px,3.8vw,32px) 'Caveat',cursive;color:var(--oro);margin:0 0 24px}
+.brindis-highlights{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:30px}
+.brindis-pill{display:inline-flex;align-items:center;gap:8px;padding:9px 18px;border-radius:999px;background:rgba(255,246,229,0.08);border:1px solid rgba(242,167,27,0.3);color:var(--sun);font:600 13px 'Space Grotesk'}
+/* ===== SABORES (Tarjetas con Protagonistas) ===== */
 .sabores{background:transparent;color:var(--sun);padding:14vh 5vw}
-.sabores h2{font:500 clamp(36px,5.5vw,76px)/0.95 'Space Grotesk';letter-spacing:-.02em;margin:0 0 40px}
-.sabores h2 .hl{color:var(--oro)}
-.sabor-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.sabor{background:rgba(18,9,4,0.75);backdrop-filter:blur(8px);border:1px solid rgba(242,167,27,0.35);box-shadow:0 8px 32px rgba(0,0,0,0.5);border-radius:22px;padding:30px 26px;min-height:270px;display:flex;flex-direction:column;justify-content:space-between;transition:transform .45s var(--ease),border-color .45s,background .45s,box-shadow .45s;position:relative;overflow:hidden}
-.sabor:after{content:"✺";position:absolute;right:20px;top:16px;color:var(--oro);font-size:26px;opacity:.35;transition:transform .6s var(--ease),opacity .4s}
-.sabor:hover:after{transform:rotate(180deg) scale(1.3);opacity:1}
-.sabor:hover{transform:translateY(-8px) rotate(-.5deg);border-color:var(--oro);background:#fff6e50d}
-.sabor-grid .sabor:nth-child(2){transition-delay:.08s}.sabor-grid .sabor:nth-child(3){transition-delay:.16s}
+.sabores h2{font:700 clamp(36px,5.5vw,76px)/0.95 'Space Grotesk';letter-spacing:-.02em;margin:0 0 40px}
+.sabor-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.sabor{background:rgba(18,9,4,0.85);backdrop-filter:blur(14px);border:1px solid rgba(242,167,27,0.35);box-shadow:0 12px 36px rgba(0,0,0,0.6);border-radius:24px;padding:26px 22px 28px;display:flex;flex-direction:column;justify-content:space-between;transition:transform .4s var(--ease),border-color .4s,box-shadow .4s;position:relative;overflow:hidden;text-align:center}
+.sabor:hover{transform:translateY(-8px);border-color:var(--oro);box-shadow:0 18px 48px rgba(255,120,30,0.25)}
+.sabor-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
 .sabor .num{font:700 15px 'Space Grotesk';color:var(--oro);letter-spacing:.2em}
-.sabor h3{font:500 44px/1 'Space Grotesk';margin:60px 0 10px}
-.sabor p{font:400 15px/1.6 Manrope;color:#d8cfc3;margin:0}
-.sabor .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
-.chip{font:600 11px Manrope;letter-spacing:.08em;text-transform:uppercase;padding:7px 13px;border-radius:999px;background:var(--tomate);color:var(--sun);transition:transform .3s var(--ease),background .3s,color .3s}
-.sabor:hover .chip{background:var(--oro);color:var(--tinta);transform:translateY(-2px) scale(1.05)}
-/* ===== FOOTER ===== */
-footer{padding:40px 5vw 90px;background:rgba(18,9,4,0.85);backdrop-filter:blur(8px);color:#8d8275;font:600 12px 'Space Grotesk';letter-spacing:.14em;text-transform:uppercase;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;border-top:2px solid #fff6e522}
+.sabor-badge{font:700 11px 'Space Grotesk';letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border-radius:999px}
+.sabor-img-wrap{height:190px;display:flex;align-items:center;justify-content:center;margin:8px auto 14px;position:relative}
+.sabor-img{max-height:180px;max-width:100%;object-fit:contain;filter:drop-shadow(0 14px 22px rgba(0,0,0,0.85));transition:transform .45s var(--ease)}
+.sabor:hover .sabor-img{transform:scale(1.08) translateY(-4px)}
+.sabor-body h3{font:700 30px/1 'Space Grotesk';margin:0 0 10px;color:var(--sun)}
+.sabor-body p{font:400 14px/1.6 Manrope;color:#d8cfc3;margin:0 0 16px;min-height:68px}
+.sabor .chips{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:20px}
+.chip{font:600 11px Manrope;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border-radius:999px;background:var(--tomate);color:var(--sun)}
+.sabor-cta{display:inline-flex;align-items:center;justify-content:center;width:100%;padding:12px 18px;border-radius:999px;background:var(--tomate);color:var(--sun);text-decoration:none;font:700 12px 'Space Grotesk';letter-spacing:.06em;text-transform:uppercase;transition:all .25s ease;box-shadow:0 6px 18px rgba(0,0,0,0.4)}
+.sabor-cta:hover{filter:brightness(1.15);transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,0.6)}
+/* ===== FOOTER (Alto Contraste vs Llamas) ===== */
+.site-footer{position:relative;z-index:35;background:#090402;border-top:2px solid rgba(242,167,27,0.4);box-shadow:0 -20px 40px #090402;padding:36px 5vw 90px;color:var(--sun)}
+.footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;font:600 12px 'Space Grotesk';letter-spacing:.12em;text-transform:uppercase}
+.footer-brand strong{display:block;font:700 16px 'Space Grotesk';color:var(--sun);letter-spacing:.06em}
+.footer-brand .footer-sub{color:var(--oro);font-size:11px}
+.footer-badge{color:#d8cfc3;padding:8px 16px;border-radius:999px;background:rgba(255,246,229,0.06);border:1px solid rgba(255,246,229,0.12)}
+.footer-contact a{color:var(--oro);text-decoration:none;padding:8px 16px;border-radius:999px;border:1px solid rgba(242,167,27,0.4);transition:all .2s}
+.footer-contact a:hover{background:var(--oro);color:#120904}
 /* ===== REVEAL / LETTERS ===== */
 .reveal{opacity:0;transform:translateY(46px) scale(.98);transition:opacity .9s var(--ease),transform .9s var(--ease)}
 .reveal.show{opacity:1;transform:none}
@@ -170,7 +197,18 @@ footer{padding:40px 5vw 90px;background:rgba(18,9,4,0.85);backdrop-filter:blur(8
 </style>
 </head>
 <style>
-.hero-copy{padding:0!important;background:transparent!important;border:none!important;box-shadow:none!important;margin:0 auto;text-align:center}.hero h1,.hero h1 .word-wrap,.hero h1 .word-wrap:nth-child(2){font-family:'Space Grotesk',Arial,sans-serif!important;font-style:normal!important;font-weight:700!important;letter-spacing:-.055em}.hero h1{color:var(--sun);text-shadow:none}.hero h1 .hl{color:var(--tomate)}.hero-copy p{color:#e8d5be;text-shadow:none}@media(max-width:760px){.hero-copy{width:100%!important;margin:0 auto!important;padding:0!important;box-shadow:none!important;background:transparent!important;border:none!important;text-align:center}.hero h1{font-size:clamp(38px,11vw,62px);line-height:1.05}.hero h1 .word-wrap{white-space:nowrap;overflow-wrap:normal;word-break:normal}}
+.hero-copy{padding:0!important;background:transparent!important;border:none!important;box-shadow:none!important;margin:0 auto;text-align:center}
+.slogan-top{font-family:'Space Grotesk',Arial,sans-serif!important;font-style:normal!important;font-weight:700!important;letter-spacing:-.045em!important;color:var(--sun)!important}
+.slogan-script{font-family:'Caveat',cursive!important;font-style:normal!important;font-weight:700!important;color:var(--oro)!important}
+.hero-copy p{color:#e8d5be;text-shadow:none}
+@media(max-width:760px){
+  .hero-copy{width:100%!important;margin:0 auto!important;padding:0!important;box-shadow:none!important;background:transparent!important;border:none!important;text-align:center}
+  .slogan-top{font-size:clamp(28px,7.5vw,48px)!important;line-height:1.1!important}
+  .slogan-script{font-size:clamp(34px,9.5vw,56px)!important;line-height:1.08!important}
+  .sabor-grid{grid-template-columns:1fr;gap:20px}
+  .site-footer{padding:30px 18px 80px}
+  .footer-inner{flex-direction:column;text-align:center;gap:14px}
+}
 </style>
 <body>
 <canvas id="fire-smoke-canvas" class="global-fire-canvas" aria-hidden="true"></canvas>
@@ -208,10 +246,16 @@ footer{padding:40px 5vw 90px;background:rgba(18,9,4,0.85);backdrop-filter:blur(8
 
 
 <div class="hero-copy reveal">
-<div class="kicker"><span class="sun-badge">☀</span> Charcutería Norato</div>
-<h1 class="title-letters"><span class="word-wrap">La mesa</span> <span class="word-wrap">empieza</span> <span class="word-wrap hl">aquí.</span></h1>
-<p>Salchichón artesanal de pierna de cerdo y tocino de primera calidad. Hecho a mano, a fuego lento y con receta de familia.</p>
-<a class="hero-cta" href="#sabores">Descubrir los sabores <span>↓</span></a>
+<div class="kicker"><span class="sun-badge">☀</span> Charcutería Norato · Sol y Mesa</div>
+<h1 class="hero-slogan">
+  <span class="slogan-top">Porque el salchichón bueno</span>
+  <span class="slogan-script">se cuenta con la boca llena.</span>
+</h1>
+<p>Salchichón artesanal elaborado con pierna de cerdo y tocino de primera calidad. Hecho a mano, a fuego lento con leña de roble y receta familiar de los 80.</p>
+<div class="hero-actions">
+  <a class="hero-cta" href="#sabores">Descubrir los sabores <span>↓</span></a>
+  <a class="hero-cta-secondary" href="#proceso">Conocer el oficio <span>↓</span></a>
+</div>
 </div>
 <div class="handnote">¡huele a casa! →</div>
 </section>
@@ -330,31 +374,112 @@ footer{padding:40px 5vw 90px;background:rgba(18,9,4,0.85);backdrop-filter:blur(8
   </div>
 </section>
 
-<!-- BRINDIS -->
+<!-- BRINDIS (La Sobremesa) -->
 <section class="brindis">
-
-<div class="brindis-card reveal">
-<div class="kicker" style="justify-content:center;margin-bottom:26px"><span class="sun-badge">✺</span> Esto no se come en serio</div>
-<h2 class="title-letters"><span class="word-wrap">Para</span> <span class="word-wrap hl">reírse</span> <span class="word-wrap">con pan.</span></h2>
-<p>— porque el salchichón bueno se cuenta con la boca llena.</p>
-</div>
+  <div class="brindis-bg">
+    <img src="assets/brindis.png" alt="Mesa compartida con salchichón Norato y brindis">
+  </div>
+  <div class="brindis-card reveal">
+    <div class="kicker" style="justify-content:center;margin-bottom:18px"><span class="sun-badge">🍷</span> La Sobremesa y el Compartir</div>
+    <h2>Para reírse con pan,<br><span class="hl">vino y buena charla.</span></h2>
+    <p class="brindis-tagline">El salchichón artesanal no se hizo para comerse con prisa ni solemnidad.</p>
+    <div class="brindis-highlights">
+      <div class="brindis-pill"><span>🥖</span> Pan crujiente al centro</div>
+      <div class="brindis-pill"><span>🔥</span> Sabor a leña y roble</div>
+      <div class="brindis-pill"><span>🥂</span> Amigos que se quedan</div>
+    </div>
+    <div class="brindis-action">
+      <a class="hero-cta" href="https://wa.me/573182745713?text=Hola%2C%20quiero%20hacer%20un%20pedido%20de%20salchich%C3%B3n%20Norato%20para%20compartir." target="_blank" rel="noopener">Pedir para tu mesa por WhatsApp ↗</a>
+    </div>
+  </div>
 </section>
 
 <!-- SABORES -->
 <section id="sabores" class="sabores">
-<div class="sec-head reveal" style="align-items:flex-start">
-<div><div class="kicker" style="color:var(--oro)"><span class="sun-badge">☀</span> Tres expresiones</div>
-<h2 class="title-letters" style="color:var(--sun)"><span class="word-wrap">Elige tu</span> <span class="word-wrap hl">lado.</span></h2></div>
-</div>
-<div class="sabor-grid">
-<article class="sabor reveal"><div class="num">01</div><div><h3>Picante</h3><p>El carácter directo. Para quienes no le temen al punto.</p><div class="chips"><span class="chip">Rojo · intenso</span></div><a href="picante/">Descubrir Picante ↗</a></div></article>
-<article class="sabor reveal"><div class="num">02</div><div><h3>Jamonado</h3><p>El abrazo suave: sabor profundo sin prisa.</p><div class="chips"><span class="chip">Morado · profundo</span></div><a href="jamonado/">Descubrir Jamonado ↗</a></div></article>
-<article class="sabor reveal"><div class="num">03</div><div><h3>Cervecero ahumado</h3><p>El plan de la tarde, con calor, humo y su burbuja favorita.</p><div class="chips"><span class="chip">Ámbar · ahumado</span></div><a href="cervecero-ahumado/">Descubrir Cervecero ↗</a></div></article>
-</div>
+  <div class="sec-head reveal" style="align-items:flex-start">
+    <div>
+      <div class="kicker" style="color:var(--oro)"><span class="sun-badge">☀</span> Tres expresiones artesanales</div>
+      <h2 style="color:var(--sun)">Elige tu <span class="hl" style="color:var(--oro)">lado.</span></h2>
+    </div>
+    <div class="sec-note" style="color:#e8d5be">Salchichón de 450g · Empacado al vacío · Lotes limitados</div>
+  </div>
+
+  <div class="sabor-grid">
+    <!-- 01 PICANTE -->
+    <article class="sabor reveal sabor-picante">
+      <div class="sabor-top">
+        <span class="num">01</span>
+        <span class="sabor-badge" style="background:#e2482b;color:#fff">Picante</span>
+      </div>
+      <div class="sabor-img-wrap">
+        <img src="assets/protagonistas/picante-protagonista.png" alt="Salchichón Picante Norato con ají" class="sabor-img">
+      </div>
+      <div class="sabor-body">
+        <h3>Picante</h3>
+        <p>El carácter directo con ají rojo y pimienta. Para quienes disfrutan una intensidad cálida sin perder el sabor artesanal.</p>
+        <div class="chips">
+          <span class="chip">Rojo vivo</span>
+          <span class="chip">Ají & pimienta</span>
+        </div>
+        <a class="sabor-cta" href="picante/">Descubrir Picante ↗</a>
+      </div>
+    </article>
+
+    <!-- 02 JAMONADO -->
+    <article class="sabor reveal sabor-jamonado">
+      <div class="sabor-top">
+        <span class="num">02</span>
+        <span class="sabor-badge" style="background:#8e44ad;color:#fff">Jamonado</span>
+      </div>
+      <div class="sabor-img-wrap">
+        <img src="assets/protagonistas/jamonado-protagonista.png" alt="Salchichón Jamonado Norato" class="sabor-img">
+      </div>
+      <div class="sabor-body">
+        <h3>Jamonado</h3>
+        <p>El abrazo suave y pausado: textura tierna, sabor noble y equilibrado que acompaña cualquier sobremesa tranquila.</p>
+        <div class="chips">
+          <span class="chip" style="background:#8e44ad">Morado sereno</span>
+          <span class="chip" style="background:#8e44ad">Textura tierna</span>
+        </div>
+        <a class="sabor-cta" style="background:#8e44ad" href="jamonado/">Descubrir Jamonado ↗</a>
+      </div>
+    </article>
+
+    <!-- 03 CERVECERO AHUMADO -->
+    <article class="sabor reveal sabor-cervecero">
+      <div class="sabor-top">
+        <span class="num">03</span>
+        <span class="sabor-badge" style="background:#d87916;color:#fff">Cervecero</span>
+      </div>
+      <div class="sabor-img-wrap">
+        <img src="assets/protagonistas/cervecero-protagonista.png" alt="Salchichón Cervecero ahumado Norato" class="sabor-img">
+      </div>
+      <div class="sabor-body">
+        <h3>Cervecero ahumado</h3>
+        <p>El plan de la tarde: notas tostadas de leña de roble, calor de humo y el acompañante perfecto para una cerveza fría.</p>
+        <div class="chips">
+          <span class="chip" style="background:#d87916">Ámbar cálido</span>
+          <span class="chip" style="background:#d87916">Leña de roble</span>
+        </div>
+        <a class="sabor-cta" style="background:#d87916" href="cervecero-ahumado/">Descubrir Cervecero ↗</a>
+      </div>
+    </article>
+  </div>
 </section>
 </main>
 
-<footer><span>Charcutería Norato</span><span>Sol y Mesa</span><span>solo salchichón · chorizo en pausa</span></footer>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <strong>Charcutería Norato</strong>
+      <span class="footer-sub">Sol y Mesa · Tradición Familiar</span>
+    </div>
+    <div class="footer-badge">Solo salchichón artesanal · Chorizo en pausa</div>
+    <div class="footer-contact">
+      <a href="https://wa.me/573182745713" target="_blank" rel="noopener">WhatsApp: 318 274 5713</a>
+    </div>
+  </div>
+</footer>
 
 <div class="ticker" style="bottom:auto;transform:rotate(1.2deg) scale(1.02)" aria-hidden="true"><div class="ticker-track">
 <span>hagamos mesa <em>✺</em></span><span>luz natural <em>✺</em></span><span>receta familiar de los 80 <em>✺</em></span><span>pierna de cerdo y tocino <em>✺</em></span>
