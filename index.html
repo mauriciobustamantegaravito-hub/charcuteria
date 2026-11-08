@@ -43,7 +43,7 @@ main{position:relative;z-index:2}
 .kicker{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:700 12px 'Space Grotesk';letter-spacing:.22em;text-transform:uppercase;color:var(--tomate);margin:0 auto 20px}
 .kicker .sun-badge{width:34px;height:34px;border-radius:50%;background:var(--oro);display:grid;place-items:center;font-size:16px;animation:pop 2.4s var(--ease) infinite}
 .hero h1{font:500 clamp(52px,9.5vw,138px)/1.12 'Space Grotesk';letter-spacing:-.03em;margin:0 auto 20px;padding:.08em .06em .14em;max-width:100%;min-width:0;overflow-wrap:anywhere;overflow:visible;text-align:center}
-.hero h1 .word-wrap{white-space:nowrap;display:inline;line-height:1.12;overflow:visible}
+.hero h1 .word-wrap{white-space:nowrap;display:inline-block;line-height:1.12;overflow:visible}
 .hero h1 .word-wrap:nth-child(2){font-family:'Space Grotesk',Arial,sans-serif;font-style:normal;font-weight:700;letter-spacing:-.055em}
 .hero h1 .hl{color:var(--tomate);position:relative;display:inline-block}
 .hero h1 .hl:after{content:"";position:absolute;left:-2%;bottom:4%;width:104%;height:.18em;background:var(--oro);border-radius:999px;z-index:-1;transform:scaleX(0);transform-origin:left;animation:swipe 1s .9s var(--ease) forwards}
@@ -98,11 +98,11 @@ section{position:relative}
 .brindis-card h2 .hl{color:var(--tomate)}
 .brindis-card p{font:700 26px Caveat;color:var(--oro);margin:0 0 26px}
 /* ===== SABORES ===== */
-.sabores{background:var(--tinta);color:var(--sun);padding:14vh 5vw}
+.sabores{background:transparent;color:var(--sun);padding:14vh 5vw}
 .sabores h2{font:500 clamp(36px,5.5vw,76px)/0.95 'Space Grotesk';letter-spacing:-.02em;margin:0 0 40px}
 .sabores h2 .hl{color:var(--oro)}
 .sabor-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.sabor{border:2px solid #fff6e533;border-radius:22px;padding:30px 26px;min-height:270px;display:flex;flex-direction:column;justify-content:space-between;transition:transform .45s var(--ease),border-color .45s,background .45s;position:relative;overflow:hidden}
+.sabor{background:rgba(18,9,4,0.75);backdrop-filter:blur(8px);border:1px solid rgba(242,167,27,0.35);box-shadow:0 8px 32px rgba(0,0,0,0.5);border-radius:22px;padding:30px 26px;min-height:270px;display:flex;flex-direction:column;justify-content:space-between;transition:transform .45s var(--ease),border-color .45s,background .45s,box-shadow .45s;position:relative;overflow:hidden}
 .sabor:after{content:"✺";position:absolute;right:20px;top:16px;color:var(--oro);font-size:26px;opacity:.35;transition:transform .6s var(--ease),opacity .4s}
 .sabor:hover:after{transform:rotate(180deg) scale(1.3);opacity:1}
 .sabor:hover{transform:translateY(-8px) rotate(-.5deg);border-color:var(--oro);background:#fff6e50d}
@@ -114,14 +114,14 @@ section{position:relative}
 .chip{font:600 11px Manrope;letter-spacing:.08em;text-transform:uppercase;padding:7px 13px;border-radius:999px;background:var(--tomate);color:var(--sun);transition:transform .3s var(--ease),background .3s,color .3s}
 .sabor:hover .chip{background:var(--oro);color:var(--tinta);transform:translateY(-2px) scale(1.05)}
 /* ===== FOOTER ===== */
-footer{padding:40px 5vw 90px;background:var(--tinta);color:#8d8275;font:600 12px 'Space Grotesk';letter-spacing:.14em;text-transform:uppercase;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;border-top:2px solid #fff6e522}
+footer{padding:40px 5vw 90px;background:rgba(18,9,4,0.85);backdrop-filter:blur(8px);color:#8d8275;font:600 12px 'Space Grotesk';letter-spacing:.14em;text-transform:uppercase;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;border-top:2px solid #fff6e522}
 /* ===== REVEAL / LETTERS ===== */
 .reveal{opacity:0;transform:translateY(46px) scale(.98);transition:opacity .9s var(--ease),transform .9s var(--ease)}
 .reveal.show{opacity:1;transform:none}
 .title-letters .letter{display:inline-block;opacity:0;transform:translateY(110%) rotate(-8deg);line-height:1;vertical-align:baseline}
 .title-letters .space{display:inline-block;width:.26em}
 .title-letters.is-visible .letter{animation:typewriterIn .12s steps(1,end) both;animation-delay:calc(var(--title-i)*.06s)}
-.hero h1.title-letters.is-visible .letter{animation-delay:calc(var(--title-i)*.2s)}
+.hero h1.title-letters.is-visible .letter{animation-delay:calc(var(--title-i)*.07s)}
 /* ===== KEYFRAMES ===== */
 @keyframes letterIn{from{opacity:0;transform:translateY(110%) rotate(-8deg)}to{opacity:1;transform:none}}
 @keyframes heroType{from{opacity:0;transform:translateX(-.18em)}to{opacity:1;transform:none}}
@@ -139,13 +139,13 @@ footer{padding:40px 5vw 90px;background:var(--tinta);color:#8d8275;font:600 12px
 @keyframes floaty{0%,100%{margin-top:0}50%{margin-top:-14px}}
 /* ===== MOBILE ===== */
 @media(max-width:760px){
-.nav-links{display:none}.title-letters .word-wrap{white-space:nowrap!important;overflow-wrap:normal;word-break:normal}
+.nav-links{display:none}.title-letters .word-wrap{white-space:nowrap!important;display:inline-block!important;overflow-wrap:normal;word-break:normal}
 .grid-platos{gap:14px}
 .plato.p-a,.plato.p-b,.plato.p-c,.plato.p-d,.plato.p-e,.plato.p-f{grid-column:span 12;aspect-ratio:4/3;margin-top:0}
 .sabor-grid{grid-template-columns:1fr}
 .hero .handnote{display:none}
 }
-@media(max-width:900px){.nav-links{display:none}.hero h1 .word-wrap{white-space:nowrap;display:inline;overflow-wrap:normal;word-break:normal}.proceso-panel{min-width:0}.proceso-panel h3{font-size:clamp(28px,8.8vw,34px);line-height:1.08;overflow-wrap:anywhere}.proceso-panel p{font-size:16px;line-height:1.5;overflow-wrap:anywhere}.proceso-panel .hero-cta,.hero-cta{max-width:100%;white-space:normal;text-align:center}.hero .handnote{max-width:38vw;overflow-wrap:anywhere}}
+@media(max-width:900px){.nav-links{display:none}.hero h1 .word-wrap{white-space:nowrap;display:inline-block;overflow-wrap:normal;word-break:normal}.proceso-panel{min-width:0}.proceso-panel h3{font-size:clamp(28px,8.8vw,34px);line-height:1.08;overflow-wrap:anywhere}.proceso-panel p{font-size:16px;line-height:1.5;overflow-wrap:anywhere}.proceso-panel .hero-cta,.hero-cta{max-width:100%;white-space:normal;text-align:center}.hero .handnote{max-width:38vw;overflow-wrap:anywhere}}
 @media(prefers-reduced-motion:reduce){
 .ticker-track{animation:tick 18s linear infinite}.hero-img img,.brindis .bg img{animation:none}
 .title-letters .letter{opacity:1;transform:none;animation:none!important}
@@ -163,7 +163,7 @@ footer{padding:40px 5vw 90px;background:var(--tinta);color:#8d8275;font:600 12px
 </style>
 </head>
 <style>
-.hero-copy{padding:0!important;background:transparent!important;border:none!important;box-shadow:none!important;margin:0 auto;text-align:center}.hero h1,.hero h1 .word-wrap,.hero h1 .word-wrap:nth-child(2){font-family:'Space Grotesk',Arial,sans-serif!important;font-style:normal!important;font-weight:700!important;letter-spacing:-.055em}.hero h1{color:var(--sun);text-shadow:none}.hero h1 .hl{color:var(--tomate)}.hero-copy p{color:#e8d5be;text-shadow:none}@media(max-width:760px){.hero-copy{width:100%!important;margin:0 auto!important;padding:0!important;box-shadow:none!important;background:transparent!important;border:none!important;text-align:center}.hero h1{font-size:clamp(48px,14vw,66px);line-height:.94}.hero h1 .word-wrap{white-space:nowrap;overflow-wrap:normal;word-break:normal}}
+.hero-copy{padding:0!important;background:transparent!important;border:none!important;box-shadow:none!important;margin:0 auto;text-align:center}.hero h1,.hero h1 .word-wrap,.hero h1 .word-wrap:nth-child(2){font-family:'Space Grotesk',Arial,sans-serif!important;font-style:normal!important;font-weight:700!important;letter-spacing:-.055em}.hero h1{color:var(--sun);text-shadow:none}.hero h1 .hl{color:var(--tomate)}.hero-copy p{color:#e8d5be;text-shadow:none}@media(max-width:760px){.hero-copy{width:100%!important;margin:0 auto!important;padding:0!important;box-shadow:none!important;background:transparent!important;border:none!important;text-align:center}.hero h1{font-size:clamp(38px,11vw,62px);line-height:1.05}.hero h1 .word-wrap{white-space:nowrap;overflow-wrap:normal;word-break:normal}}
 </style>
 <body>
 <canvas id="fire-smoke-canvas" class="global-fire-canvas" aria-hidden="true"></canvas>
@@ -309,6 +309,6 @@ function closeMenu(){menuTrigger.setAttribute('aria-expanded','false');menuPanel
 function openMenu(){menuTrigger.setAttribute('aria-expanded','true');menuPanel.classList.add('is-open');menuScrim.classList.add('is-open');menuPanel.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
 menuTrigger.addEventListener('click',()=>menuTrigger.getAttribute('aria-expanded')==='true'?closeMenu():openMenu());menuScrim.addEventListener('click',closeMenu);menuPanel.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
 </script>
-<script src="assets/fire-smoke.js?v=9"></script>
+<script src="assets/fire-smoke.js?v=10"></script>
 <script>if ("serviceWorker" in navigator) navigator.serviceWorker.register("/sw.js");</script>
 </body></html>

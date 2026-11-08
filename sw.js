@@ -1,4 +1,4 @@
-const CACHE = 'norato-sol-y-mesa-v9';
+const CACHE = 'norato-sol-y-mesa-v10';
 const APP_SHELL = ['/', '/manifest.json'];
 
 self.addEventListener('install', event => {
